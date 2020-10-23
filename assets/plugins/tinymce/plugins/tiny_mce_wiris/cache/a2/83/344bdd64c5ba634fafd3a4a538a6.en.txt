@@ -1,0 +1,1 @@
+a space colon space b space equals space p space colon space q space a t a u space a over b equals p over q rightwards double arrow a space x space q space equals space b space x space p

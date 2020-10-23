@@ -1,0 +1,3 @@
+12 over 20 equals 3 over n
+left right double arrow 12 space x space n space equals 20 space x space 3
+left right double arrow n space equals fraction numerator 20 space x space 3 over denominator 12 end fraction equals 20 over 4 equals space 5

@@ -1,0 +1,1 @@
+n-th root of a space x space b end root equals n-th root of a space x space n-th root of b

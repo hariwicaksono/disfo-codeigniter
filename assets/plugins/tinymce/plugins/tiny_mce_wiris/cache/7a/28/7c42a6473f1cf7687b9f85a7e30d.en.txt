@@ -1,0 +1,1 @@
+fraction numerator l u a s space p a d a space p e t a over denominator left parenthesis 1 space colon space 200 right parenthesis squared end fraction

@@ -1,0 +1,3 @@
+40 over n equals 40 over 48 left right double arrow 40 space x space n space equals space 40 space x space 48
+left right double arrow n equals fraction numerator 40 space x space 48 over denominator 40 end fraction
+left right double arrow n space equals space 48
