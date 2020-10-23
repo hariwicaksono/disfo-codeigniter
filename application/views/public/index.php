@@ -82,7 +82,7 @@
 				<!-- /.container-fluid -->
 			</nav>
 		</header>
-		<div class="content-wrapper" style="background:url('<?=base_url('images/backx.jpg');?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+		<div class="content-wrapper" style="background:url('<?=base_url('images/Digital-Signage.jpeg');?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
 			  <!-- Main content -->
 			  <section class="content">
 					<?php $this->load->view($content); ?>

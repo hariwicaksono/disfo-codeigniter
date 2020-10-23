@@ -26,8 +26,8 @@
 			menarik untuk dilihat. Pastikan informasi anda dibaca dengan Display Informasi.
 		</i></p>
 		<div class="form-group">
-			<a href="<?=site_url('login'); ?>" class="btn bg-orange btn-md">Login</a>
-			<a href="<?=site_url('display'); ?>" class="btn bg-purple btn-md">Display</a>
+			<a href="<?=site_url('login'); ?>" class="btn bg-purple btn-md">Login</a>
+			<a href="<?=site_url('display'); ?>" class="btn bg-warning btn-md">Display</a>
 		</div>
 	</div>
 </div>
