@@ -9,7 +9,7 @@
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
 				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="<?=site_url('input/jumatan/form/add'); ?>" class="btn btn-flat btn-xs btn-danger">Tambah</a>
+				<a href="<?=site_url('input/jumatan/form/add'); ?>" class="btn btn-flat btn-xs btn-primary">Tambah</a>
 			</div>				
 		</div>
 	</div>
@@ -28,6 +28,9 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-12" >
+		<div class="callout callout-info">
+                <p>Bagian ini khusus untuk layout 2</p>
+            </div>	
 			<div class="box box-default" >
 				<div class="box-body table-responsive ipad">
 					<table class ="table" id="tb-jumatan">

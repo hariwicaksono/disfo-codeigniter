@@ -60,10 +60,10 @@
 									<?=$video->status; ?>
 								</td>
 								<td>
-									<a href="javascript:void(0);" class="btn btn-flat btn-xs btn-default text-light-blue" OnClick="load_edit('<?=$video->id; ?>')">
+									<a href="javascript:void(0);" class="btn btn-primary btn-xs" OnClick="load_edit('<?=$video->id; ?>')">
 										<i class="fa fa-edit"><span> Edit</span></i>
 									</a>
-									<a href="<?=site_url('input/video/hapus/'.$video->id); ?>" class="btn btn-flat btn-xs btn-default text-red">
+									<a href="<?=site_url('input/video/hapus/'.$video->id); ?>" class="btn btn-danger btn-xs">
 										<i class="fa fa-trash"><span> Delete</span></i>
 									</a>									
 								</td>

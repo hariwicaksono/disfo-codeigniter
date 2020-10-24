@@ -23,26 +23,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet"> 
 	<!-- Theme style -->
-	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.min.css'); ?>">	
 	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style_2.css'); ?>">
-
 	<?php if($this->settings->info['layout']=="layout_1"){ ?>
-    <link rel="stylesheet" href="<?=base_url('assets/display/css/style.css'); ?>" media="screen" type="text/css" />
-	<?php } ?>
+	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_1.css'); ?>" media="screen" type="text/css" />
+    <?php } ?>		
 	<?php if($this->settings->info['layout']=="layout_2"){ ?>
 	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_2.css'); ?>" media="screen" type="text/css" />
-    <?php } ?>
-	<?php if($this->settings->info['layout']=="layout_3"){ ?>
-	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_3.css'); ?>" media="screen" type="text/css" />
-    <?php } ?>	
-	<?php if($this->settings->info['layout']=="layout_4"){ ?>
-	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_4.css'); ?>" media="screen" type="text/css" />
-    <?php } ?>	
-	<?php if($this->settings->info['layout']=="layout_5"){ ?>
-	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_5.css'); ?>" media="screen" type="text/css" />
-    <?php } ?>		
-	<?php if($this->settings->info['layout']=="layout_6"){ ?>
-	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_6.css'); ?>" media="screen" type="text/css" />
 	<link rel="stylesheet" href="<?=base_url('assets/plugins/rotate/simpletextrotator.css'); ?>" media="screen" type="text/css" />
 	<?php } ?>	
 	

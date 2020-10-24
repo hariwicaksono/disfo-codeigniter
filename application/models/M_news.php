@@ -30,8 +30,8 @@ class M_news extends CI_Model {
 				array_push($news_array,$news->txt_news);
 			}
 		}
-		array_push($news_array,"Universitas Amikom Purwokerto");
-		array_push($news_array,"amikompurwokerto.ac.id");
+		array_push($news_array,"News");
+		array_push($news_array,"localhost");
 		$hasil = implode("&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;",$news_array);
 		
 		return $hasil;

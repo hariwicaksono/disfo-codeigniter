@@ -17,10 +17,7 @@
 <!-- Main content -->
 <section class="content">
 	<div class="row">
-		<div class="col-sm-12" >
-			<div class="callout callout-info">
-                <p>Bagian ini khusus untuk layout 2</p>
-            </div>			
+		<div class="col-sm-12" >		
 			<div class="box box-default" >
 				<div class="box-body" id="settings-content">
 					<?php if(isset($type)){ ?>

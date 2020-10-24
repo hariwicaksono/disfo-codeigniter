@@ -18,10 +18,7 @@
 <section class="content">
 	<div class="row">
 		<div class="col-sm-12" >
-			<div class="alert alert-info">
-				<h4><i class="icon fa fa-info"></i> Info!</h4>
-				Bagian ini hanya untuk Layout 5
-			</div>
+			
 			<div class="box box-default" >
 				<div class="box-body">
 					<?php if(isset($type)){ ?>
@@ -54,10 +51,10 @@
 									<?=$agenda->waktu; ?>
 								</td>
 								<td>
-									<a href="javascript:void(0);" OnClick="load_edit(<?=$agenda->id; ?>)">
+									<a href="javascript:void(0);" class="btn btn-primary btn-xs" OnClick="load_edit(<?=$agenda->id; ?>)">
 										<i class="fa fa-edit"></i> Edit
 									</a>
-									<a href="<?=site_url('input/agenda/hapus/'. $agenda->id); ?>" class="text-red">
+									<a href="<?=site_url('input/agenda/hapus/'. $agenda->id); ?>" class="btn btn-danger btn-xs">
 										<i class="fa fa-edit"></i> Hapus
 									</a>									
 								</td>

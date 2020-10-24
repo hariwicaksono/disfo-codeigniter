@@ -1,225 +1,213 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php 
-$hijri= GregorianToHijri(time());
-?>
-<div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-	<div class="row" id="atas">
-		<div class="col-sm-4">
-			<div class="card time-card">
-				<div class="body bg-green up-card">
-					<div class="row" id="display-waktu">
-						<div class="col-sm-6 text-center">
-							<span id="hari"><?=strtoupper(hari(date("D"))); ?></span><br />
-							<span id="tanggal"><?=date('d F Y'); ?></span><br />
-							<span id="tanggal"><?php echo $hijri[1] . " " . monthName($hijri[0]) . " " . $hijri[2]; ?></span>
-						</div>
-						<div class="col-sm-6 number text-center" id="waktu">
-						
-						</div>						
-					</div>
-				</div>
-			</div>			
+<div class="transparan" id="judul-atas">
+	<div class="row">
+		<div class="col-md-3 col-lg-3" id="calendar">
+			<div id="hari"><?=hari(date("D")); ?></div>
+			<div id="tanggal"><?=date("d M Y"); ?></div>
 		</div>
-		<div class="col-sm-8 up-card">
-			<div class="row time-card">
-				<div class="col-sm-3 up-card" style="margin:auto;">
-					<img id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="130" height="130" />
-				</div>
-				<div class="col-sm-9 up-card" id="judul_parent">
-					<span id="judul_1">DISPLAY INFORMASI</span><br />
-					<span id="judul_2"><?=$this->settings->info['nama_instansi']; ?></span><br />
-					<span id="judul_3"><?=$this->settings->info['alamat']; ?></span>
-				</div>				
-			</div>
-		</div>
+		<div class="col-md-6 col-lg-6" id="instansi">
+			<div id="nama-instansi" class="text-center"><?=$this->settings->info['nama_instansi']; ?></div>
+			<div id="alamat-instansi" class="text-center"><?=$this->settings->info['alamat']; ?></div>
+			<div id="alamat-lain" class="text-center">No. Telp / HP : <?=$this->settings->info['phone_instansi']; ?> Email : <?=$this->settings->info['mail']; ?></div>
+		</div>	
+		<div class="col-md-3 col-lg-3" id="jam">
+			<div class="number text-center" id="waktu"></div>
+		</div>		
 	</div>
-	<div class="row" id="tengah">
-		<div class="col-sm-4">
-			<?php
-			$str_tema="";
-			$str_sub_tema="";			
-			$query_tema=$this->db->get('tema');
-			if($query_tema->num_rows()>0){
-				foreach($query_tema->result() as $tema){
-					$start_date=strtotime($tema->start_date);
-					$end_date=strtotime($tema->end_date);
-					$now_date=strtotime(date("Y-m-d"));
-					if(($now_date>=$start_date) && ($now_date<=$end_date)){
-						$str_tema=$tema->tema;
-						$str_sub_tema=$tema->sub_tema;
-					}
-				}
-			}
-			?>
-
-			<div class="card left-card">
-				<div class="body bg-blue-grey text-center tema">
-					<span class="judul-utama">PENGUMUMAN:</span><br />
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner">
-					<?php
-					if($agenda_disdik->num_rows()>0){
-						$no_agenda=0;
-						foreach($agenda_disdik->result() as $disdik){
-							$no_agenda++;
-					?>
-						<div class="item <?php echo ($no_agenda==1 ? "active" : ""); ?>">
-							<div class="body transparan" style="padding:2px 5px 2px 15px;">
-								<h4 class="number" id="nama-event"><?=$disdik->nama_agenda; ?></h4>
-								<p>
-									<span id="tgl-event" style="font-size:14pt;"><?=hari(date("D",strtotime($disdik->tgl_agenda))); ?>, <?=date_format(date_create($disdik->tgl_agenda),"d F Y"); ?></span><br />
-									<span id="tmp-event"><?=$disdik->tmp_agenda; ?></span><br />
-									<span><h4 style="line-height:0.6;" id="waktu-event"><?=$disdik->waktu; ?> - Selesai</h4></span>
-								</p>
-							</div>
-						</div>					
-					<?php
-						}
-					}
-					?>
-					</div>
-				</div>
-				</div>
-			</div>	
-			<div class="card left-card" id="bulan-ini">
-				<div class="body bg-orange text-center up-card">
-					<span class="judul-utama-2">EVENT BULAN INI</span>
-				</div>				  
-				<div class="body bg-pink" style="padding:2px 5px 2px 15px;">
-					<h4 class="number" style="line-height:0.6;" id="nama-event"><?=$event_bulan_ini['nama_event']; ?></h4>
-					<p>
-						<span id="tgl-event" style="font-size:14pt;"><?=$event_bulan_ini['tgl_event']; ?></span><br />
-						<span id="tmp-event"><?=$event_bulan_ini['tmp_event']; ?></span><br />
-						<span><h4 style="line-height:0.6;" id="waktu-event"><?=$event_bulan_ini['waktu_event']; ?></h4></span>
-					</p>
-				</div>		  
-			</div>			
-			<div id="carousel-example-generic" class="carousel slide left-card" data-ride="carousel">
-				<div class="body bg-orange text-center up-card">
-					<span class="judul-utama-2">GALLERY PHOTOS</span>
-				</div>				
-				<div class="carousel-inner" role="listbox" id="slide-photos">
+</div>
+<div id="judul-atas-2">
+	<div class="row">
+		<div class="col-md-6 col-lg-6">
+			<div class="card">
+				<div class="body bg-red" id="isi-jumatan">
 				<?php 
-				if($data_gallery->num_rows()>0){
-					$i=0;
-					foreach($data_gallery->result() as $gallery){
-						$i++;
+				if($data_jumat->num_rows()>0){
+					$jumat=$data_jumat->row();
 				?>
-					<div class="item <?php echo ($i==1 ? 'active' : ''); ?>">
-						<img src="<?php echo base_url('images/gallery/'.($gallery->image_url=="" ? 'no_thumbnail.jpg' : $gallery->image_url)); ?>">
-						<div class="carousel-caption">
-							<h3><?=$gallery->label; ?></h3>
-							<p><?=$gallery->deskripsi; ?></p>
-						</div>
-					</div>					
-				
-				<?php
-					}
-				}
-				?>
-			
+					JADWAL JUMAT
+					<table class="table table-condensed">
+						<tr>
+							<th>IMAM</th>
+							<td><?=$jumat->imam; ?></td>
+						</tr>
+						<tr>
+							<th>KHOTIB</th>
+							<td><?=$jumat->khotib; ?></td>
+						</tr>
+						<tr>
+							<th>MUADZIN</th>
+							<td><?=$jumat->muazin; ?></td>
+						</tr>
+						<tr>
+							<th>TEMA KHOTBAH</th>
+							<td><?=$jumat->judul_khotbah; ?></td>
+						</tr>						
+					</table>
+				<?php } ?>
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-8">
-			<div class="embed-responsive embed-responsive-4by3">
-				<video id="my-player" autoplay controls muted>					
-			  
-				</video>
-			</div>
-			<div id="element">
-				<div id="nama-guru" style="background:url('<?=base_url('images/app/back_foto.png');?>') no-repeat; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;;">
-					<div id="jabatan" class="text-center">
-						<h5>GURU</h5>
-					</div>
-					<div id="guru-info">
-						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner" id="tempat-guru">
+
+		<div class="col-md-6 col-lg-6">
+			<div class="card">
+				<div class="body bg-red" id="isi-kegiatan">
+				KEGIATAN BULAN INI
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner">
+						<?php
+						if($data_kegiatan->num_rows()>0){
+							$no_agenda=0;
+							foreach($data_kegiatan->result() as $kegiatan){
+								$no_agenda++;
+						?>
+							<div class="item <?php echo ($no_agenda==1 ? "active" : ""); ?>">
+								<div style="padding:2px 5px 2px 15px;">
+									<h4 id="nama-event"><?=$kegiatan->nama_kegiatan; ?></h4>
+									<p>
+										<span id="tgl-event" style="font-size:14pt;"><?=$kegiatan->tmp_kegiatan; ?></span><br />
+										<span id="tgl-event" style="font-size:12pt;">
+											<?=hari(date("D",strtotime($kegiatan->tgl_kegiatan))); ?>, <?=date_format(date_create($kegiatan->tgl_kegiatan),"d F Y"); ?>											
+											<?=$kegiatan->waktu; ?>
+										</span>
+									</p>
+								</div>
+							</div>					
 							<?php
-							if($data_guru->num_rows()>0){
-								$noguru=0;
-								foreach($data_guru->result() as $guru){
-									$noguru++;
-							?>
-								<div class="item <?php echo ($noguru==1 ? "active" : ""); ?>" style="padding-left:20px;">
-									<div class="body">
-										<div class="media">
-											<div class="media-left">
-												<a href="javascript:void(0);">
-													<img class="media-object" src="<?php echo base_url('images/photo/'.($guru->foto=="" ? '64x64.png' : $guru->foto)); ?>" width="64" height="64">
-												</a>
-											</div>
-											<div class="media-body">
-												<h4 class="media-heading" style="color:#fff!important;"><?=$guru->nama_lengkap; ?></h4> 
-												<span style="color:#fff!important;"><?=$guru->tmp_lahir; ?>, <?=date("d F Y", strtotime($guru->tgl_lahir)); ?></span>
-												<h3 class="media-heading" style="color:#fff!important;">GURU : <?=$guru->ket; ?></h3>
-											</div>
-										</div>					
-									</div>
-								</div>							
-							<?php
-								}
-							}
-							?>
-						
-							</div>
+						  }
+					  }else{
+					  ?>
+						  <div class="item active">
+							<p>
+								Tidak ada event / kegiatan untuk bulan ini, yang tercatat di sistem
+							</p>
+						  </div>			  
+					  <?php
+					  }
+					  ?>	
 						</div>
 					</div>
 				</div>
-				<div id="slide-container">
-					<div id="first-content">
-						<span class="header-text">
-							<?=$news; ?>
-						</span>
-					</div> 
+			</div>
+		</div>		
+	</div>
+</div>
+<div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+	<div class="row" id="info-sholat">
+		<div class="col-md-12 col-lg-12">
+			<div class="row" id="row-keuangan">
+				<div class="col-md-8 col-lg-8" id="info-keuangan">
+					
+				</div>
+				<div class="col-md-4 col-lg-4" id="info-transaksi">
+					Transaksi Keuangan: <br />
+					<span class="rotate"><?=$data_transaksi; ?></span>
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 pull-right transparan-abu text-center" style="margin-bottom:5px;">
+					<span id="count-solat" class="jelang"></span>
+				</div>			
+			</div>
+			<div class="row">
+				<?php 
+				if($jadwal_solat->num_rows()>0){
+					$solat=$jadwal_solat->row();
+					$subuh =$solat->subuh;
+					$duha=$solat->duha;
+					$dzuhur=$solat->dzuhur;
+					$ashar=$solat->ashar;
+					$magrib=$solat->magrib;
+					$isya=$solat->isya;
+				}
+				?>
+				<div class="col-md-12 col-lg-12 transparan" style="padding-top:20px;">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-blue-grey text-center">
+								<span class="nm-solat">Subuh</span><br />
+								<span class="waktu-solat" id="subuh"><?php echo (isset($subuh) ? $subuh : "-"); ?></span>
+							</div>
+						</div>
+					</div>			
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-red text-center">
+								<span class="nm-solat">Duha</span><br />
+								<span class="waktu-solat" id="duha"><?php echo (isset($duha) ? $duha : "-"); ?></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-cyan text-center">
+								<span class="nm-solat">Dzuhur</span><br />
+								<span class="waktu-solat" id="dzuhur"><?php echo (isset($dzuhur) ? $dzuhur : "-"); ?></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-green text-center">
+								<span class="nm-solat">Ashar</span><br />
+								<span class="waktu-solat" id="ashar"><?php echo (isset($ashar) ? $ashar : "-"); ?></span>
+							</div>
+						</div>
+					</div>	
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-orange text-center">
+								<span class="nm-solat">Magrib</span><br />
+								<span class="waktu-solat" id="magrib"><?php echo (isset($magrib) ? $magrib : "-"); ?></span>
+							</div>
+						</div>
+					</div>	
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-pink text-center">
+								<span class="nm-solat">Isya</span><br />
+								<span class="waktu-solat" id="isya"><?php echo (isset($isya) ? $isya : "-"); ?></span>
+							</div>
+						</div>
+					</div>							
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <!--first slide-->
-
+<div id="slide-container">
+	<div id="first-content">
+		<div class="header-text">
+			<marquee scrollamount="8" id="teks-berjalan"><?=$news; ?></marquee>
+		</div>
+	</div> 
+</div>
 <script type="text/javascript">
+var intervalKeuangan = setInterval( function(){
+	cek_keuangan();
+},1000);
 
-var intervalID = setInterval( function(){
-	cek_tema();
-	cek_event_bulan();
+var intervalSolat = setInterval( function(){
+	cek_waktu_solat();
+}, 1000);
+
+var intervalDay = setInterval( function(){
+	cek_date();
 }, 3000);
 
-var intervalGuruSlide = setInterval( function(){
-	cek_guru();
-	cek_photos();
-}, <?=$this->settings->info['slide_refresh']; ?> * 1000); //setiap 5 menit
+var intervalCekSholat = setInterval( function(){
+	cek_sholat()
+}, 4000);
 
 var intervalNewsTicker = setInterval(function(){
 	cek_news();
 }, <?=$this->settings->info['news_refresh']; ?> * 1000);
 
-var i=0;
-var videoSource = <?php echo json_encode($data_video); ?>;
-var videoCount = videoSource.length;
-document.getElementById("my-player").setAttribute("src",videoSource[0]);
-function videoPlay(videoNum)
-{
-	document.getElementById("my-player").setAttribute("src",videoSource[videoNum]);
-	document.getElementById("my-player").load();
-	document.getElementById("my-player").play();
-}
-document.getElementById('my-player').addEventListener('ended',myHandler,false);
-function myHandler() {
-	if(i == (videoCount-1)){
-		i = 0;
-		$.post(_BASE_URL + 'display/get_video',function(f){
-			videoSource = f;
-			videoCount = videoSource.length;
-		},'json');
-		videoPlay(i);
-	}else{
-		i++;
-		videoPlay(i);
-	}
-}
-
+var intervalCekTransaksi = setInterval(function(){
+	cek_transaksi();
+	cek_jumatan();
+	cek_kegiatan();
+}, 120000);
 function startTime() {
   var today = new Date();
   var h = today.getHours();
@@ -227,7 +215,6 @@ function startTime() {
   var s = today.getSeconds();
   m = checkTime(m);
   s = checkTime(s);
-
   document.getElementById('waktu').innerHTML =
   h + ":" + m + ":" + s;
   var t = setTimeout(startTime, 500);
@@ -239,33 +226,67 @@ function checkTime(i) {
   return i;
 }
 
+function cek_waktu_solat(){
+	$.post(_BASE_URL + 'display/cek_waktu_solat',function(f){
+		if(f.waktu!=""){
+			var now = new Date().getTime();
+			var countDownDate = new Date(f.waktu).getTime();
+			var distance = countDownDate - now;
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = checkTime(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+			var minutes = checkTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+			var seconds = checkTime(Math.floor((distance % (1000 * 60)) / 1000));	
+			
+			$('#count-solat').html(f.jelang + ' ' + hours + ":" + minutes + ":" + seconds);
+		}else{
+			$('#count-solat').html(f.jelang);
+		}
+	},'json');		
+}
 function cek_news(){
 	$.post(_BASE_URL + 'display/cek_news',function(f){
-		$('.header-text').html(f);
+		$('#teks-berjalan').html(f);
 	},'text');
 }
-function cek_event_bulan(){
-	$.post(_BASE_URL + 'display/cek_event_bulan',function(f){
-		$('#nama-event').html(f.nama_event);
-		$('#tgl-event').html(f.tgl_event);
-		$('#tmp-event').html(f.tmp_event);
-		$('#waktu-event').html(f.waktu_event);
+function cek_date(){
+	$.post(_BASE_URL + 'display/cek_date',function(f){
+		$('#hari').html(f.hari);
+		$('#tanggal').html(f.tanggal);
 	},'json');
 }
-function cek_tema(){
-	$.post(_BASE_URL + 'display/cek_tema',function(f){
-		$('.sub-judul').html(f.tema);
-		$('.sub-tema').html(f.sub_tema);
-	},'json');
+function cek_keuangan(){
+	$.post(_BASE_URL + 'display/cek_keuangan',function(f){
+		$('#info-keuangan').html(f);
+	},'text');
 }
-function cek_guru(){
-	$.post(_BASE_URL + 'display/cek_guru',function(f){
-		$('#tempat-guru').html(f);
+function cek_sholat(){
+	$.post(_BASE_URL + 'display/cek_sholat',function(f){
+		$('#subuh').html(f.subuh);
+		$('#duha').html(f.duha);
+		$('#dzuhur').html(f.dzuhur);
+		$('#ashar').html(f.ashar);
+		$('#magrib').html(f.magrib);
+		$('#isya').html(f.isya);
+	},'json');	
+}
+function cek_transaksi(){
+	$.post(_BASE_URL + 'display/cek_transaksi/text',function(f){
+		$('.rotate').html(f);
+	},'text');	
+}
+function cek_jumatan(){
+	$.post(_BASE_URL + 'display/jumatan',function(f){
+		$('#isi-jumatan').html(f);
 	},'html');	
 }
-function cek_photos(){
-	$.post(_BASE_URL + 'display/cek_photos',function(f){
-		$('#slide-photos').html(f);
+function cek_kegiatan(){
+	$.post(_BASE_URL + 'display/kegiatan_masjid',function(f){
+		$('#isi-kegiatan').html(f);
 	},'html');	
 }
+$(".rotate").textrotator({
+	animation: "flipUp", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+	separator: "|", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+	speed: 5000 // How many milliseconds until the next word show.
+});
 </script>

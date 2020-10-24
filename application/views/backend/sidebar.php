@@ -11,6 +11,9 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU UTAMA</li>
+        <li>
+          <a href="<?=site_url('display'); ?>" target="_blank"><i class="fa fa-arrow-right" aria-hidden="true"></i> <span>Lihat Display</span></a>
+        </li>	
         <li class="<?=isset($dashboard) ? 'active' : ''; ?>">
           <a href="<?=site_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
         </li>		

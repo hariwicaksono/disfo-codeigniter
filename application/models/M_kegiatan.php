@@ -12,7 +12,7 @@ class M_kegiatan extends CI_Model {
 				->from('kegiatan_masjid')
 				->order_by('tgl_kegiatan','DESC')
 				->get();
-		
+		 
 		return $query;
 	}
 	public function save(){

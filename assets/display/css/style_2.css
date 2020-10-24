@@ -16,51 +16,88 @@ body {
 }
 
 /* left side */
-#left-image-bottom {
-	position: absolute; 
-	left:0; 
-	top:0;
-	width: 100vw;
-	height: 100vh;
-	background: url(https://snap-photos.s3.amazonaws.com/img-thumbs/960w/1D180509DF.jpg); 
-	background-size: cover;
-	background-repeat: no-repeat;
-	z-index:0;
-	-webkit-animation-duration: 10s;
-    -webkit-animation-name: pulse;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-direction: alternate;
-	 /* Hey browser, use your GPU */
-   	-webkit-transform: translate3d(0, 0, 0);
-}
-
 /*bottom container*/
-#slide-container {
-
+#jam{
+	padding:2vh 0;
+}
+#judul-atas {
+	position:absolute;
+	top:0vh;
     width:100%;
 	min-width:1366px;
-	height:5vh;
+	height:20vh;
+    z-index:4;
+    overflow: hidden;
+}
+#judul-atas-2 {
+	position:absolute;
+	top:22vh;
+    width:100%;
+	min-width:1366px;
+	height:30vh;
+    z-index:5;
+    overflow: hidden;
+}
+#info-sholat {
+	position:absolute;
+	top:53vh;
+    width:100%;
+	min-width:1366px;
+	height:35vh;
+    z-index:3;
+    overflow: hidden;
+}
+#row-keuangan{
+    width:100%;
+	min-width:1366px;	
+	background-color: rgba(192, 57, 43, 0.5);
+	height:9vh;
+	margin-bottom:1vh;
+}
+#info-keuangan{
+	color:  #fdfefe;
+	text-shadow: 2px 1px #000000;	
+	font-size:2vw;
+	line-height: 4vh;
+}
+#info-transaksi{
+	color:  #fdfefe;
+	text-shadow: 2px 1px #000000;	
+	font-size:1.5vw;
+	line-height: 4vh;
+}
+/*bottom container*/
+#slide-container {
+	position:absolute;
+	top:88vh;
+    width:100%;
+	min-width:1366px;
+	height:12vh;
     background: #c0392b;
     z-index:2;
     overflow: hidden;
+	white-space: nowrap;
 }
 
 /* text scroller */
 
 #first-content {
-
+    top:1.5vh;
+	position: absolute;
+    z-index:50;
+    position: absolute;
     width: 100%;
     margin: 0;
     text-align: center;
     white-space: nowrap;
-    -webkit-transform:translateX(100%);	
-    -webkit-animation: scroll-left 60s linear infinite;
+
+
 }
 
 /* Global Classes */
 .header-text {
 	font-family: 'Helvetica', sans-serif;
-	font-size: 1.8vw;
+	font-size: 3.8vw;
 	color: #FFFFFF;
 	width:100vw;
 }
@@ -70,20 +107,7 @@ body {
 	font-weight: 600;
 }
 /*container*/
-#display-konten{
-	
-}
-#kiri{
-	width:25%;
-	height:100%;
-	padding-top:20px;
-	background-color: rgba(0,0,0,0.5);
-}
-#kanan{
-	width:75%;
-	height:100%;
-	overflow: hidden;
-}
+
 #judul {
 	top:0;
 	left:0;
@@ -109,23 +133,48 @@ body {
 	background-color: rgba(208,211,212,0.5);
 	color:black;
 }
-
-#main-content{
-	height:100%;
-	margin-bottom:10px;
+.card{
+	background-color : rgba(0,0,0,0.5)!important;
+}
+.bg-red {
+	background-color : rgba(244,67,54,0.5) !important;
+}
+.bg-blue-grey{
+	background-color : rgba(96,125,139,0.5) !important;
+}
+.bg-cyan{
+	background-color : rgba(0,188,212,0.5) !important;
+}
+.bg-green{
+	background-color : rgba(76,175,80,0.5) !important;
+}
+.bg-orange{
+	background-color : rgba(255,152,0,0.5) !important;
+}
+.bg-pink{
+	background-color : rgba(233,30,99,0.5) !important;
 }
 
-#event{
-	height:100%;
-}
-#media{
-	height:100%;
-	padding-bottom:12vh;
-}
-.body .number{
+.number{
   font-weight: normal;
-  font-size: 26px;
+  font-size: 5vw;
+  margin:auto;
   color:  #fdfefe;	
+}
+#hari {
+	font-size: 3.5vw;
+}
+#tanggal {
+	font-size: 2.5vw;
+}
+#nama-instansi {
+	font-size: 3vw;
+}
+#alamat-instansi {
+	font-size: 1.5vw;
+}
+#calendar {
+	padding-left : 2vw;
 }
 .jelang{
 	font-size: 1.8vw;
@@ -138,95 +187,6 @@ body {
 	font-size: 2.8vw;
 	line-height: 0.6;
 }
-
-.time-card {
-	margin-top :15px;
-	margin-left:20px;
-	margin-bottom:5px;
+th, td {
+  padding: 5px!important;
 }
-.left-card {
-	margin-left:20px;
-	margin-bottom:5px!important;
-}
-#atas{
-	margin-bottom:2px!important;
-}
-#hari{
-	font-size: 2.5vw;
-}
-
-#judul_1{
-	font-size: 3.5vw;
-	font-family: 'Anton', sans-serif;
-	-webkit-text-stroke: 2px black;
-}
-#judul_2{
-	font-size: 2vw;
-	color: black;
-	font-weight: bold;
-	font-family: 'Anton', sans-serif;
-	line-height: 0.5;
-	-webkit-text-stroke: 2px white;
-}
-#judul_3{
-	font-size: 1.5vw;
-	color: black;
-	font-weight: bold;
-	font-family: 'Anton', sans-serif;
-	line-height: 0.8;
-	-webkit-text-stroke: 1px white;
-}
-.judul-utama{
-	font-size: 2vw;
-	color:#f1c40f;
-}
-.judul-utama-2{
-	font-size: 2vw;
-}
-.sub-judul{
-	font-size: 1.5vw;
-}
-.sub-tema{
-	font-size: 1.5vw;
-}
-#waktu{
-	padding-top:15px;
-	padding-bottom:15px;
-	font-size: 3vw;
-}
-#logo{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;	
-}
-.embed-responsive-4by3{
-	padding-bottom: 50%!important;
-}
-#nama-guru{
-	height:120px;
-}
-#jabatan{
-	width:134px;
-	height:25px;
-	padding:1px;
-}
-#guru-info{
-	padding:10px 4px 4px 4px;
-}
-.isi-event{
-	margin-bottom:0px;
-}
-.tema{
-	padding:0px!important;
-}
-.up-card{
-	padding:0px!important;
-}
-#parent {
-  position: relative;
-}
-
-#element {
-	margin-top:0.5vw;
-}
-

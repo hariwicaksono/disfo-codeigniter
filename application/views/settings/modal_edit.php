@@ -39,11 +39,8 @@
 							<label class="control-label">Value</label>
 							<select class="form-control" name="value_setting">
 								<option value="layout_1" <?php echo ($setitem->value_setting=="layout_1" ? "selected" : "");?>>Layout 1</option>
-								<option value="layout_2" <?php echo ($setitem->value_setting=="layout_2" ? "selected" : "");?>>Layout 2</option>
-								<option value="layout_3" <?php echo ($setitem->value_setting=="layout_3" ? "selected" : "");?>>Layout 3</option>
-								<option value="layout_4" <?php echo ($setitem->value_setting=="layout_4" ? "selected" : "");?>>Layout 4</option>
-								<option value="layout_5" <?php echo ($setitem->value_setting=="layout_5" ? "selected" : "");?>>Layout 5</option>
-								<option value="layout_6" <?php echo ($setitem->value_setting=="layout_6" ? "selected" : "");?>>Layout 6 (Masjid)</option>
+								<option value="layout_2" <?php echo ($setitem->value_setting=="layout_2" ? "selected" : "");?>>Layout 2 (Masjid)</option>
+								
 							</select>
 						</div>
 				<?php }elseif($setitem->variable_setting=="background"){ ?>
@@ -73,24 +70,7 @@
 				}
 				?>
 				<?php if($setitem->variable_setting=="layout"){ ?>
-						<div>
-							<figure style="float:left;">
-								<img src="<?=base_url('images/app/layout_1.jpg'); ?>" width="250" height="141">
-								<figcaption class="text-center"><small>layout_1</small></figcaption>
-							</figure>
-							<figure style="float:left;">
-								<img src="<?=base_url('images/app/layout_2.jpeg'); ?>" width="250" height="141">
-								<figcaption class="text-center"><small>layout_2</small></figcaption>
-							</figure>
-							<figure style="float:left;">
-								<img src="<?=base_url('images/app/layout_3.png'); ?>" width="250" height="141">
-								<figcaption class="text-center"><small>layout_3</small></figcaption>
-							</figure>		
-							<figure style="float:left;">
-								<img src="<?=base_url('images/app/layout_4.jpeg'); ?>" width="250" height="141">
-								<figcaption class="text-center"><small>layout_4</small></figcaption>
-							</figure>							
-						</div>			
+									
 				<?php } ?>
 					</div>
 				</div>

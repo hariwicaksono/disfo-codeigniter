@@ -46,10 +46,10 @@
 								<td><?=$news->tgl_news; ?></td>
 								<td><?=$news->txt_news; ?></td>
 								<td>
-									<a href="javascript:void(0);" class="btn btn-flat btn-xs btn-primary" OnClick="load_edit('<?=$news->id; ?>')">
+									<a href="javascript:void(0);" class="btn btn-primary btn-xs" OnClick="load_edit('<?=$news->id; ?>')">
 										<i class="fa fa-edit"><span> Edit</span></i>
 									</a>
-									<a href="<?=site_url('input/news/hapus/'.$news->id); ?>" class="btn btn-flat btn-xs btn-danger">
+									<a href="<?=site_url('input/news/hapus/'.$news->id); ?>" class="btn btn-danger btn-xs">
 										<i class="fa fa-trash"><span> Delete</span></i>
 									</a>									
 								</td>

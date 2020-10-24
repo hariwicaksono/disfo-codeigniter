@@ -17,4 +17,9 @@ class M_agenda extends CI_Model {
 	public function get_single_agenda($id){
 		return $this->db->get_where('agenda_instansi',array('id' => $id));
 	}	
+
+	public function agenda_bulan($bulan){
+		$query = $this->db->query("select * from agenda_instansi where MONTH(tgl_agenda)='$bulan' ORDER BY tgl_agenda DESC");
+		return $query;
+	}
 }
