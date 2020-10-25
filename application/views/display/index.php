@@ -25,6 +25,7 @@
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.min.css'); ?>">	
 	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style_2.css'); ?>">
+
 	<?php if($this->settings->info['layout']=="layout_1"){ ?>
 	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_1.css'); ?>" media="screen" type="text/css" />
     <?php } ?>		
@@ -41,6 +42,9 @@
 	<!-- Bootstrap 3.3.7 -->
 	<script src="<?php echo base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/rotate/jquery.simple-text-rotator.min.js'); ?>"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/id.min.js" integrity="sha512-he8U4ic6kf3kustvJfiERUpojM8barHoz0WYpAUDWQVn61efpm3aVAD8RWL8OloaDDzMZ1gZiubF9OSdYBqHfQ==" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		const _BASE_URL = '<?=base_url();?>', _CURRENT_URL = '<?=current_url();?>';			
 	</script>	

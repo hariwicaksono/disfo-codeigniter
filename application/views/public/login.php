@@ -9,9 +9,10 @@
 	font-weight:bold;
 }
 </style>
-<div class="col-md-4 col-xs-12 pull-right kotak">
-	<div class="login-box-body">
-		<p class="login-box-msg">Sign in to start your session</p>
+<div class="row justify-content-center">
+<div class="col-sm-4">
+	<div class="card card-body">
+	<h5 class="card-title mb-3">Sign in to start your session</h5>
 		<?php if(isset($type)){ ?>
 		<div class="alert <?=$type; ?>">
 			<?=$message; ?>
@@ -26,21 +27,18 @@
 				<input type="password" class="form-control" placeholder="Password" name="password" id="password">
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			</div>
-			<div class="row">
-				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-				</div>
-				<!-- /.col -->
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
 			</div>
 		</form>
 
 	</div>
 	<!-- /.login-box-body -->
-	<p class="text-white text-right"><i>
+	<p class="text-center"><i>
 		Login menggunakan hak Administrator untuk melakukan input data dan
-		pengaturan aplikasi. User dengan hak akses biasa tidak dapat melakukan pengaturan
-		pada aplikasi.
+		pengaturan aplikasi.
 	</i></p>
+</div>
 </div>
 <!-- /.login-box -->
 <script type="text/javascript">

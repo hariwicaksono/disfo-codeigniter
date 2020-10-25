@@ -150,7 +150,7 @@
 </div>
 <!--first slide-->
 <div id="tanggal-jam" class="text-center">
-	<p id="hari" style="color: white;"><?=strtoupper(hari(date("D"))); ?>, <?=strtoupper(date('d F Y')); ?></p>
+	<p id="hari" style="color: white;"></p>
 	<p id="waktu" style="color: white;"></p>
 </div>
 <div id="slide-container">
@@ -160,6 +160,25 @@
 		</span>
 	</div> 
 </div>
+
+<script>
+function displayDate() {
+    var date = moment().format('Do MMMM YYYY');
+    $('#hari').html(date);
+    setTimeout(displayDate, 1000);
+}
+
+function displayTime() {
+    var time = moment().format('HH:mm:ss');
+    $('#waktu').html(time);
+    setTimeout(displayTime, 1000);
+}
+
+$(document).ready(function() {
+	displayDate();
+    displayTime();
+});
+</script>
 
 <script type="text/javascript">
 var jam_ke=0;
@@ -203,19 +222,6 @@ function myHandler() {
 		i++;
 		videoPlay(i);
 	}
-}
-
-function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('waktu').innerHTML =
-  h + ":" + m + ":" + s;
-  var t = setTimeout(startTime, 500);
-  
 }
 
 function checkTime(i) {

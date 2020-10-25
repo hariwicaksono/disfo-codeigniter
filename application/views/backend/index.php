@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>DISFO | <?=$title; ?></title>
 	<!-- Tell the browser to be responsive to screen width -->
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content=""> 
 	<meta name="keyword" content="">
 	<meta name="google" content="nositelinkssearchbox" />
@@ -90,7 +90,7 @@
 		const _BASE_URL = '<?=base_url();?>', _CURRENT_URL = '<?=current_url();?>';			
 	</script>	
 </head>
-<body class="hold-transition skin-blue sidebar-mini <?php echo (isset($jadwal_pelajaran) ? "sidebar-collapse" : "" ); ?>" onload="load_konten()">
+<body class="hold-transition skin-blue-light sidebar-mini <?php echo (isset($jadwal_pelajaran) ? "sidebar-collapse" : "" ); ?>" onload="load_konten()">
 <div class="wrapper">
 
   <header class="main-header">

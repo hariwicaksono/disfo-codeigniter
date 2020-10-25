@@ -161,15 +161,15 @@ body {
 
 #hari{
   font-weight: normal;
-  font-size: 16px;
+  font-size: 20px;
   color:  #fdfefe;	
-  line-height:0.8;	
+  line-height:0.5;	
 }
 #waktu{
   font-weight: normal;
-  font-size: 36px;
+  font-size: 30px;
   color:  #fdfefe;	
-  line-height:0.8;
+  line-height:0.5;
 }
 .embed-responsive-4by3{
 	padding-bottom:60%!important;

@@ -1,17 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <div class="row">
 	<div class="col-sm-12">
-		<div class="content-header">
-		  <h2 class="page-header">
-			Introduction 
-		  </h1>
-			<p class="lead">
-			  <b>Aplikasi DISFO</b> (Display Informasi) ini adalah aplikasi Display Informasi berbasis web 
-			  dengan CSS, Bootstrap 3 dan Framework Codeigniter, memperbaharui versi sebelumya. 
-			  Aplikasi ini memberikan banyak fitur terbaru diantaranya adalah tampilan Jam Pelajaran, Guru
-			  yang mengajar, kegiatan sekolah, jadwal sholat, berita-berita, serta video atau slide photo berbentuk video.
-			</p>		  
-		</div>
 		<div class="content body">
 		  <p class="lead">
 			Bacalah panduan ini dengan baik, dan jika anda masih belum memahaminya,
