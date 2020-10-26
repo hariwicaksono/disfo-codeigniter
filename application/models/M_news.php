@@ -27,12 +27,11 @@ class M_news extends CI_Model {
 		$news_array=array();
 		if($query->num_rows()>0){
 			foreach($query->result() as $news){
-				array_push($news_array,$news->txt_news);
+				array_push($news_array,date("d-m-Y", strtotime($news->tgl_news)),$news->txt_news);
 			}
 		}
-		array_push($news_array,"News");
-		array_push($news_array,"localhost");
-		$hasil = implode("&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;",$news_array);
+		array_push($news_array,"Berita");
+		$hasil = implode(",&nbsp;&nbsp;",$news_array);
 		
 		return $hasil;
 	}	

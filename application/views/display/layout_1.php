@@ -1,80 +1,38 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-	<div class="row transparan" style="margin-bottom: 3rem;">
-		<div class="col-sm-4" id="box-logo">
-			<img style="margin:0 auto;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />
+	<div class="row transparan" style="margin-bottom: 1rem;">
+		<div class="col-sm-2" id="box-logo">
+			<img style="margin:0 auto;margin-top: 20px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />
 		</div>
-		<div class="col-sm-8" id="judul_parent">
-			<span id="judul_1"><?=$this->settings->info['nama_instansi']; ?></span><br />
+		<div class="col-sm-6" id="judul_parent">
+			<span id="judul_1"><strong><?=$this->settings->info['nama_instansi']; ?></strong></span><br />
 			<span id="judul_2"><?=$this->settings->info['alamat']; ?></span>
 		</div>	
-	</div>	
-	<div class="row">
-		<div class="col-sm-9">
-			<div class="row">
-				<div class="col-sm-3">
-					<?php 
-					if($jadwal_solat->num_rows()>0){
-						$solat=$jadwal_solat->row();
-						$subuh =$solat->subuh;
-						$duha=$solat->duha;
-						$dzuhur=$solat->dzuhur;
-						$ashar=$solat->ashar;
-						$magrib=$solat->magrib;
-						$isya=$solat->isya;
-					}
-					?>				
-					<div class="body bg-blue text-center up-card" style="margin-top:5px;">
-						<span class="header-agenda">JADWAL SHALAT</span>
-					</div>	
-					<div class="card">
-						<div class="body bg-blue-grey text-center">
-							<span class="nm-solat">Subuh</span><br />
-							<span class="waktu-solat"><?php echo (isset($subuh) ? $subuh : "-"); ?></span>
-						</div>
-					</div>	
-					<div class="card">
-						<div class="body bg-red text-center">
-							<span class="nm-solat">Dzuha</span><br />
-							<span class="waktu-solat"><?php echo (isset($duha) ? $duha : "-"); ?></span>
-						</div>
-					</div>
-					<div class="card">
-						<div class="body bg-cyan text-center">
-							<span class="nm-solat">Dzuhur</span><br />
-							<span class="waktu-solat"><?php echo (isset($dzuhur) ? $dzuhur : "-"); ?></span>
-						</div>
-					</div>
-					<div class="card">
-						<div class="body bg-green text-center">
-							<span class="nm-solat">Ashar</span><br />
-							<span class="waktu-solat"><?php echo (isset($ashar) ? $ashar : "-"); ?></span>
-						</div>
-					</div>
-					<div class="card">
-						<div class="body bg-orange text-center">
-							<span class="nm-solat">Maghrib</span><br />
-							<span class="waktu-solat"><?php echo (isset($magrib) ? $magrib : "-"); ?></span>
-						</div>
-					</div>
-					<div class="card">
-						<div class="body bg-pink text-center">
-							<span class="nm-solat">Isya</span><br />
-							<span class="waktu-solat"><?php echo (isset($isya) ? $isya : "-"); ?></span>
-						</div>
-					</div>					
-				</div>
-				<div class="col-sm-9">
-					<div class="embed-responsive embed-responsive-4by3">
-						<video id="my-player" autoplay controls muted>					
-					  
-						</video>
-					</div>						
-				</div>
-			</div>
-			 
+		<div class="col-sm-4">
+		
+	                <div class="row listdata">
+					<p><?=$current_weather['name']?>, <?=$current_weather['sys']['country']?> | <?=$current_weather['weather'][0]['main']?>, <?=$current_weather['weather'][0]['description']?></p>
+		                <div class="col-sm-6 level">
+		                	<p><strong><?=substr($current_weather['main']['temp'], 0, 2)?></strong> &deg;</p>
+		                	<p id="unit">Celcius</p>
+		                </div>
+		                <div class="col-sm-6 descript">
+		                	<p><strong>Low:</strong> <?=$current_weather['main']['temp_min']?>&deg;</p>
+		                	<p><strong>High:</strong> <?=$current_weather['main']['temp_max']?>&deg;</p>
+		                	<p><strong>Humidity:</strong> <?=$current_weather['main']['humidity']?>%</p>
+		                </div>
+	                </div>
 		</div>
-		<div class="col-sm-3">
+	</div>	
+	<div class="row justify-content-center">
+		<div class="col-sm-8">
+			<div class="embed-responsive embed-responsive-4by3">
+				<video id="my-player" autoplay controls muted>					
+				
+				</video>
+			</div>						
+		</div>
+		<div class="col-sm-4">
 			<div class="card right-card" id="bulan-ini">
 				<div class="body bg-red text-center up-card">
 					<span class="header-agenda"><?=$this->settings->info['name_agenda_instansi']; ?></span>
@@ -94,11 +52,11 @@
 					?>
 						<div class="item <?php echo ($noevent==1 ? "active" : ""); ?>">
 							<div class="body bg-cyan" style="padding:2px 5px 2px 15px;">
-								<h4 class="number" style="line-height:1;" id="nama-event"><?=$nama_event; ?></h4>
+								<h4 class="number" id="nama-event"><?=$nama_event; ?></h4>
 								<p>
-									<span id="tgl-event" style="font-size:14pt;"><?=$tgl_event; ?></span><br />
-									<span id="tmp-event" style="font-size:14pt;"><?=$tmp_event; ?></span><br />
-									<span><h4 style="line-height:0.6;" id="waktu-event"><?=$waktu_event; ?> - Selesai</h4></span>
+									<span><h4 id="tgl-event"><?=$tgl_event; ?></h4></span>
+									<span><h5 id="tmp-event"><?=$tmp_event; ?></h5></span>
+									<span><h5 id="waktu-event"><?=$waktu_event; ?> - Selesai</h5></span>
 								</p>
 							</div>
 						</div>						
@@ -119,9 +77,10 @@
 					</div>
 				</div>	  
 			</div>
-			<div id="carousel-example-generic" class="carousel slide right-card" data-ride="carousel">
+			<br/>
+			<div id="carousel-example-generic" class="carousel slide right-card " data-ride="carousel">
 				<div class="body bg-orange text-center up-card">
-					<span class="header-agenda">GALLERY PHOTOS</span>
+					<span class="header-agenda">FOTO GALERI</span>
 				</div>				
 				<div class="carousel-inner" role="listbox" id="slide-photos">
 				<?php 
@@ -131,7 +90,7 @@
 						$i++;
 				?>
 					<div class="item <?php echo ($i==1 ? 'active' : ''); ?>">
-						<img src="<?php echo base_url('images/gallery/'.($gallery->image_url=="" ? 'no_thumbnail.jpg' : $gallery->image_url)); ?>">
+						<img src="<?php echo base_url('images/gallery/'.($gallery->image_url=="" ? 'no_thumbnail.jpg' : $gallery->image_url)); ?>" >
 						<div class="carousel-caption">
 							<h3><?=$gallery->label; ?></h3>
 							<p><?=$gallery->deskripsi; ?></p>
@@ -145,6 +104,74 @@
 			
 				</div>
 			</div>			
+		</div>
+	</div>
+
+	<div class="row" id="info-sholat">
+		<div class="col-md-12 col-lg-12">
+			<div class="row">
+				<?php 
+				if($jadwal_solat->num_rows()>0){
+					$solat=$jadwal_solat->row();
+					$subuh =$solat->subuh;
+					$duha=$solat->duha;
+					$dzuhur=$solat->dzuhur;
+					$ashar=$solat->ashar;
+					$magrib=$solat->magrib;
+					$isya=$solat->isya;
+				}
+				?>
+				<div class="col-md-12 col-lg-12 transparan" style="padding-top:20px;">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-blue-grey text-center">
+								<span class="nm-solat">Subuh</span><br />
+								<span class="waktu-solat" id="subuh"><?php echo (isset($subuh) ? $subuh : "-"); ?></span>
+							</div>
+						</div>
+					</div>			
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-red text-center">
+								<span class="nm-solat">Duha</span><br />
+								<span class="waktu-solat" id="duha"><?php echo (isset($duha) ? $duha : "-"); ?></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-cyan text-center">
+								<span class="nm-solat">Dzuhur</span><br />
+								<span class="waktu-solat" id="dzuhur"><?php echo (isset($dzuhur) ? $dzuhur : "-"); ?></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-green text-center">
+								<span class="nm-solat">Ashar</span><br />
+								<span class="waktu-solat" id="ashar"><?php echo (isset($ashar) ? $ashar : "-"); ?></span>
+							</div>
+						</div>
+					</div>	
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-orange text-center">
+								<span class="nm-solat">Magrib</span><br />
+								<span class="waktu-solat" id="magrib"><?php echo (isset($magrib) ? $magrib : "-"); ?></span>
+							</div>
+						</div>
+					</div>	
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+						<div class="card">
+							<div class="body bg-pink text-center">
+								<span class="nm-solat">Isya</span><br />
+								<span class="waktu-solat" id="isya"><?php echo (isset($isya) ? $isya : "-"); ?></span>
+							</div>
+						</div>
+					</div>							
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

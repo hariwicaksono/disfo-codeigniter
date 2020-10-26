@@ -24,13 +24,11 @@
 }
 </style>
 <div class="row justify-content-center">
-	<div class="col-sm-10">
+	<div class="col-9">
 	<div class="text-center">
 		<b><h1 class="judul-home">DISPLAY INFORMASI</h1></b>
 		<h3 class="text-white my-3"><i>
-			Tampilkan informasi dengan digital viewer, sangat mudah
-			input data anda, setting, dan tampilkan. Informasi lebih dapat diterima dan 
-			menarik untuk dilihat. Pastikan informasi anda dibaca dengan Display Informasi.
+			Tampilkan informasi dengan Display Informasi. Pemakaian sangat mudah hanya dengan IST (Input, Setting, dan Tampilkan).
 		</i></h3>
 		<div class="form-group">
 			<a href="<?=site_url('login'); ?>" class="btn btn-danger">Login</a>

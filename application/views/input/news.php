@@ -13,7 +13,7 @@
 			</div>				
 		</div>
 	</div>
-</section>
+</section> 
 <!-- Main content -->
 <section class="content">
 	<div class="row">

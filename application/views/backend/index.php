@@ -125,7 +125,7 @@
 	<?php $this->load->view($content);?>
 	<div class="row">
 		<div class="col-md-12" id="modalku">
-		
+		 
 		</div>
 	</div>	
   </div>  

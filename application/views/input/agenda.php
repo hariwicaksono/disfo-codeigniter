@@ -27,7 +27,7 @@
 					</div>
 					<?php } ?>								
 					<table class="table" id="tb-agenda">
-						<thead class="bg-gray">
+						<thead class="bg-black">
 							<tr>
 								<th>No</th>
 								<th>Nama Agenda</th>

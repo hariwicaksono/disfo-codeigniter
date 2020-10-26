@@ -9,7 +9,7 @@
 	font-weight:bold;
 }
 </style>
-<div class="row justify-content-center">
+<div class="row justify-content-center py-3">
 <div class="col-sm-4">
 	<div class="card card-body">
 	<h5 class="card-title mb-3">Sign in to start your session</h5>
@@ -28,16 +28,11 @@
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			</div>
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+				<button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
 			</div>
 		</form>
 
 	</div>
-	<!-- /.login-box-body -->
-	<p class="text-center"><i>
-		Login menggunakan hak Administrator untuk melakukan input data dan
-		pengaturan aplikasi.
-	</i></p>
 </div>
 </div>
 <!-- /.login-box -->

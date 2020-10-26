@@ -12,7 +12,7 @@
 			<a href="<?=site_url('input/agenda'); ?>"><i class="fa fa-circle-o"></i> Agenda</a>
 		</li>			 					
 		<li class="<?=(isset($gallery) ? 'active' : ''); ?>">
-			<a href="<?=site_url('input/gallery'); ?>"><i class="fa fa-circle-o"></i> Gallery Images</a> 
+			<a href="<?=site_url('input/gallery'); ?>"><i class="fa fa-circle-o"></i> Foto Galeri</a> 
 		</li>			
 		<li class="<?=(isset($video) ? 'active' : ''); ?>">
 			<a href="<?=site_url('input/video'); ?>"><i class="fa fa-circle-o"></i> Video</a>

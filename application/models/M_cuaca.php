@@ -6,28 +6,48 @@ class M_cuaca extends CI_Model {
 	public function __construct() {
 		parent::__construct();
 	}
+
+	public function get_cuaca(){
+		$query=$this->db->select('*')
+				->from('cuaca')
+				->order_by('id','ASC')
+				->get();
+		
+		return $query;
+	}
 	
 	public function get_settings(){
 		return $this->db->get('cuaca', 1);
 	}
 	
-	public function add_new($table,$data){
-		return $this->db->insert($table,$data);
-	}
-	
-	public function hapus($kriteria=array(),$table){
-		return $this->db->delete($table, $kriteria); 		
-	}
-	public function update($kriteria=array(),$table,$data=array()){
-		$this->db->where($kriteria);
-		return $this->db->update($table,$data);
-	}
-	public function insert_excel($table,$data)
-	{
-		$this->db->db_debug = false;
-		$this->db->insert_batch($table, $data);
-		return $this->db->affected_rows();
-	}
+	function current_weather($city)
+    {
+		 //get JSON
+	    	 //you can get param appid from your account in openweathermap.org
+	    	 //http://api.openweathermap.org/data/2.5/weather?appid=[YOUR_APP_ID]&units=metric&q=$city
+		 $json = file_get_contents("http://api.openweathermap.org/data/2.5/weather?appid=770a17f9520e41124656aa601bc34b3c&units=metric&q=$city", false);
+
+		 //decode JSON to array
+		 $data = json_decode($json,true);
+		 
+		 //return data array()
+		 return $data;
+    }
+
+    function forecast_weather($city)
+    {
+		 //get JSON
+	    	 //you can get param appid from your account in openweathermap.org
+	    	 //http://api.openweathermap.org/data/2.5/forecast/daily?appid=[YOUR_APP_ID]&units=metric&q=$city&cnt=7
+		 $json = file_get_contents("http://api.openweathermap.org/data/2.5/forecast/daily?appid=770a17f9520e41124656aa601bc34b3c&units=metric&q=$city&cnt=7", false);
+
+		 //decode JSON to array
+		 $data = json_decode($json,true);
+		 
+		 //return data array()
+		 return $data;
+    }
+
 	
 	
 }

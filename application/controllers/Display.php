@@ -5,7 +5,7 @@ class Display extends Public_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_agenda','m_news','m_solat','m_video','m_gallery','m_kegiatan','m_masjid','m_keuangan']);
+		$this->load->model(['m_agenda','m_news','m_solat','m_video','m_gallery','m_kegiatan','m_masjid','m_keuangan','m_cuaca']);
 		
 	}
 	public function index() 
@@ -26,6 +26,9 @@ class Display extends Public_Controller {
 			default :
 				$this->vars['agenda_instansi']=$this->m_agenda->agenda_bulan(date("n"));
 				$this->vars['data_gallery']=$this->m_gallery->get_aktif_images();
+				$query = $this->m_cuaca->get_settings()->row();
+				$city = $query->area;
+				$this->vars['current_weather'] = $this->m_cuaca->current_weather($city);
 				$content='display/layout_1';
 		}
 		$this->vars['content']=$content;
