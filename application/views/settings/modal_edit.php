@@ -40,6 +40,7 @@
 							<select class="form-control" name="value_setting">
 								<option value="layout_1" <?php echo ($setitem->value_setting=="layout_1" ? "selected" : "");?>>Layout 1</option>
 								<option value="layout_2" <?php echo ($setitem->value_setting=="layout_2" ? "selected" : "");?>>Layout 2 (Masjid)</option>
+								<option value="layout_3" <?php echo ($setitem->value_setting=="layout_3" ? "selected" : "");?>>Layout 3</option>
 								
 							</select>
 						</div>

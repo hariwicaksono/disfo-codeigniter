@@ -29,9 +29,14 @@
 	<?php if($this->settings->info['layout']=="layout_1"){ ?>
 	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_1.css'); ?>" media="screen" type="text/css" />
     <?php } ?>		
+
 	<?php if($this->settings->info['layout']=="layout_2"){ ?>
 	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_2.css'); ?>" media="screen" type="text/css" />
 	<link rel="stylesheet" href="<?=base_url('assets/plugins/rotate/simpletextrotator.css'); ?>" media="screen" type="text/css" />
+	<?php } ?>	
+
+	<?php if($this->settings->info['layout']=="layout_3"){ ?>
+	<link rel="stylesheet" href="<?=base_url('assets/display/css/style_3.css'); ?>" media="screen" type="text/css" />
 	<?php } ?>	
 	
 	<link rel="stylesheet" href="<?=base_url('assets/display/css/animate.css'); ?>" media="screen" type="text/css" />

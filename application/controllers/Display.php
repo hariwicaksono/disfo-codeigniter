@@ -22,7 +22,14 @@ class Display extends Public_Controller {
 				$this->vars['data_kegiatan']=$this->m_kegiatan->kegiatan_masjid_bulan(date("n"));
 				$this->vars['data_transaksi'] = $this->cek_transaksi('data');
 				$content='display/layout_2';
-				break;				
+				break;	
+			case 'layout_3':
+				$this->vars['agenda_instansi']=$this->m_agenda->agenda_bulan(date("n"));
+				$query = $this->m_cuaca->get_settings()->row();
+				$city = $query->area;
+				$this->vars['current_weather'] = $this->m_cuaca->current_weather($city);
+				$content='display/layout_3';
+				break;			
 			default :
 				$this->vars['agenda_instansi']=$this->m_agenda->agenda_bulan(date("n"));
 				$this->vars['data_gallery']=$this->m_gallery->get_aktif_images();

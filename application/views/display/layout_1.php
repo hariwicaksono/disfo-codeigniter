@@ -190,7 +190,7 @@
 
 <script>
 function displayDate() {
-    var date = moment().format('Do MMMM YYYY');
+    var date = moment().format('dddd, Do MMMM YYYY');
     $('#hari').html(date);
     setTimeout(displayDate, 1000);
 }
@@ -216,11 +216,6 @@ var intervalID = setInterval( function(){
 var intervalSolat = setInterval( function(){
 	cek_waktu_solat();
 }, 1000);
-
-var intervalGuruSlide = setInterval( function(){
-	cek_guru();
-	cek_photos();
-}, <?=$this->settings->info['slide_refresh']; ?> * 1000); //setiap 5 menit
 
 var intervalNewsTicker = setInterval(function(){
 	cek_news();
