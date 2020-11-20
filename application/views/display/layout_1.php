@@ -27,9 +27,24 @@
 	<div class="row justify-content-center">
 		<div class="col-sm-8">
 			<div class="embed-responsive embed-responsive-4by3">
-				<video id="my-player" autoplay controls muted>					
+			<!--
+			|--------------------------------------------------------------------------
+			| Pengaturan Video Dengan Suara dan Tanpa Suara (Muted) 
+			|--------------------------------------------------------------------------
+			| 1. Video Dengan Suara gunakan ini:
+			| <video id="my-player" autoplay controls>					
+			|				
+			| </video>
+			|
+			| 2. Video Tanpa Suara gunakan yang ini: 
+			| <video id="my-player" autoplay controls muted>					
+			|				
+			| </video>
+			|
+			-->
+			<video id="my-player" autoplay controls>					
 				
-				</video>
+			</video>
 			</div>						
 		</div>
 		<div class="col-sm-4">
