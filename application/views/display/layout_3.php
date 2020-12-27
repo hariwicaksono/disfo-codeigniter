@@ -20,6 +20,7 @@
 				</div>
 				
 				<div class="row listdata bg-red" style="padding:25px 15px;">
+				<?php if($sock = @fsockopen('www.google.com', 80)) { ?>
 					<p><?=$current_weather['name']?>, <?=$current_weather['sys']['country']?> | <?=$current_weather['weather'][0]['main']?>, <?=$current_weather['weather'][0]['description']?></p>
 		                <div class="col-sm-6 level">
 		                	<p><strong><?=substr($current_weather['main']['temp'], 0, 2)?></strong> &deg;</p>
@@ -30,6 +31,9 @@
 		                	<p><strong>High:</strong> <?=$current_weather['main']['temp_max']?>&deg;</p>
 		                	<p><strong>Humidity:</strong> <?=$current_weather['main']['humidity']?>%</p>
 		                </div>
+						<?php } else { ?>
+						<h5>Not Connected to Internet</h5>
+					<?php } ?>
 	            </div>	
 			</div>
 			<div style="padding-top:36px">

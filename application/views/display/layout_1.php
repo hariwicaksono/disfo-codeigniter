@@ -11,7 +11,8 @@
 		<div class="col-sm-4">
 		
 	                <div class="row listdata">
-					<p><?=$current_weather['name']?>, <?=$current_weather['sys']['country']?> | <?=$current_weather['weather'][0]['main']?>, <?=$current_weather['weather'][0]['description']?></p>
+					<?php if($sock = @fsockopen('www.google.com', 80)) { ?>
+						<p><?=$current_weather['name']?>, <?=$current_weather['sys']['country']?> | <?=$current_weather['weather'][0]['main']?>, <?=$current_weather['weather'][0]['description']?></p>
 		                <div class="col-sm-6 level">
 		                	<p><strong><?=substr($current_weather['main']['temp'], 0, 2)?></strong> &deg;</p>
 		                	<p id="unit">Celcius</p>
@@ -21,6 +22,9 @@
 		                	<p><strong>High:</strong> <?=$current_weather['main']['temp_max']?>&deg;</p>
 		                	<p><strong>Humidity:</strong> <?=$current_weather['main']['humidity']?>%</p>
 		                </div>
+					<?php } else { ?>
+						<h4>Not Connected to Internet</h4>
+					<?php } ?>
 	                </div>
 		</div>
 	</div>	

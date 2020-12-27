@@ -12,7 +12,7 @@
 	<meta name="google" content="nositelinkssearchbox" />
 	<meta name="robots" content="index, follow">
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/bootstrap.min.css'); ?>">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
 	<!-- Theme style -->
@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 	<!-- jQuery 3 -->
 	<script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	<script src="<?php echo base_url('assets/bower_components/jquery/dist/bootstrap.bundle.min.js'); ?>"></script>
 	<script type="text/javascript">
 		const _BASE_URL = '<?=base_url();?>', _CURRENT_URL = '<?=current_url();?>';			
 	</script>
