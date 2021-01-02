@@ -5,10 +5,10 @@ class Video extends Admin_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_video','m_curd']);
+		$this->load->model(['m_video','m_crud']);
 		$this->load->library('upload');
 		
-	}
+	} 
 	public function index()
 	{
 		$this->vars['title']="Display Video";
@@ -20,7 +20,7 @@ class Video extends Admin_Controller {
 	
 	public function add(){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			$this->vars['modal_title']='Add Video';
+			$this->vars['modal_title']='Tambah Video';
 			return $this->load->view('input/modal_upload_video',$this->vars);
 		}else{
 			redirect('input/video');
@@ -56,9 +56,9 @@ class Video extends Admin_Controller {
 						'nm_file' => $filename,
 						'status' => $_POST['status']
 					));
-					$hasil=$this->m_curd->add_new('video',$filldata);
+					$hasil=$this->m_crud->add_new('video',$filldata);
 					$this->vars['type']="alert-success";
-					$this->vars['message']="Upload Video Success";
+					$this->vars['message']="Upload Video Berhasil";
 				}
 			}else{
 				$this->vars['type'] = 'alert-danger';
@@ -87,7 +87,7 @@ class Video extends Admin_Controller {
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$id=$_POST['id'];
 			$this->vars['data']=$this->m_video->get_single_video($id);
-			$this->vars['modal_title']='Edit Video Info';
+			$this->vars['modal_title']='Edit Info Video';
 			return $this->load->view('input/modal_video',$this->vars);
 		}else{
 			redirect('input/video');
@@ -101,7 +101,7 @@ class Video extends Admin_Controller {
 					'judul' => $_POST['judul'],
 					'status' => $_POST['status']
 				);				
-				$hasil=$this->m_curd->update(array('id' => $id),'video',$filldata);
+				$hasil=$this->m_crud->update(array('id' => $id),'video',$filldata);
 				if($hasil){
 					$this->vars['type']='alert-success';
 					$this->vars['message']='Berhasil Menyimpan';
@@ -148,7 +148,7 @@ class Video extends Admin_Controller {
 					}
 				}
 				if($del_video){
-					$hasil = $this->m_curd->hapus(array('id' => $id_video),'video');
+					$hasil = $this->m_crud->hapus(array('id' => $id_video),'video');
 					if($hasil){
 						$this->vars['type']='alert-success';
 						$this->vars['message']='Berhasil Menghapus';

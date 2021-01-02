@@ -74,7 +74,7 @@
 			</p>
 		  </section>	
 		  <section id="display-show">
-			<h2 class="page-header">6. Jalankan Display</h2>
+			<h2 class="page-header">5. Jalankan Display</h2>
 			<p class="lead">
 				Setelah semua siap hubungkan perangkat anda ke TV LED. Logout dan klik Menu Display untuk menjalankan tampilan Display Informasi anda. Tekan tombol 
 				keyboard F11 untuk fullscreen view. (minimum resolution TV 1366 x 768)<br />

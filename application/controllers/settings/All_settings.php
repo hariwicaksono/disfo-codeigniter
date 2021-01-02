@@ -7,7 +7,7 @@ class All_settings extends Admin_Controller {
 	 */
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_settings','m_curd']);
+		$this->load->model(['m_settings','m_crud']);
 		$this->load->library('upload');
 	}
 	
@@ -29,7 +29,7 @@ class All_settings extends Admin_Controller {
 					$filldata=array(
 						'value_setting' => $value_setting
 					);
-					$hasil =$this->m_curd->update(array('id' => $id),"settings",$filldata);
+					$hasil =$this->m_crud->update(array('id' => $id),"settings",$filldata);
 					if($hasil){
 						$this->vars['type']="alert-success";
 						$this->vars['message']="Berhasil Menyimpan.!";
@@ -44,7 +44,7 @@ class All_settings extends Admin_Controller {
 				$filldata=$this->security->xss_clean(array(
 					'value_setting' => $value_setting
 				));
-				$hasil =$this->m_curd->update(array('id' => $id),"settings",$filldata);
+				$hasil =$this->m_crud->update(array('id' => $id),"settings",$filldata);
 				if($hasil){
 					$this->vars['type']="alert-success";
 					$this->vars['message']="Berhasil Menyimpan.!";

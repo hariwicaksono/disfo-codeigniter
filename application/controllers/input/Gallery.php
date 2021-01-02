@@ -5,13 +5,13 @@ class Gallery extends Admin_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_gallery','m_curd']);
+		$this->load->model(['m_gallery','m_crud']);
 		$this->load->library('upload');
 		
 	}
 	public function index()
 	{
-		$this->vars['title']="Images Gallery";
+		$this->vars['title']="Galeri Gambar";
 		$this->vars['display']=$this->vars['gallery']=TRUE;
 		$this->vars['data']=$this->m_gallery->get_images();
 		$this->vars['content']='input/gallery';
@@ -20,7 +20,7 @@ class Gallery extends Admin_Controller {
 	
 	public function add(){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			$this->vars['modal_title']='Add Image';
+			$this->vars['modal_title']='Tambah Gambar';
 			return $this->load->view('input/modal_upload_gallery',$this->vars);
 		}else{
 			redirect('input/gallery');
@@ -57,16 +57,16 @@ class Gallery extends Admin_Controller {
 						'image_url' => $filename,
 						'status' => $_POST['status']
 					));
-					$hasil=$this->m_curd->add_new('gallery',$filldata);
+					$hasil=$this->m_crud->add_new('gallery',$filldata);
 					$this->vars['type']="alert-success";
-					$this->vars['message']="Upload Image Success";
+					$this->vars['message']="Upload Gambar Berhasil";
 				}
 			}else{
 				$this->vars['type'] = 'alert-danger';
 				$this->vars['message'] = validation_errors();						
 			}
 
-			$this->vars['title']="Images Gallery";
+			$this->vars['title']="Galeri Gambar";
 			$this->vars['display']=$this->vars['gallery']=TRUE;
 			$this->vars['data']=$this->m_gallery->get_images();
 			$this->vars['content']='input/gallery';
@@ -88,7 +88,7 @@ class Gallery extends Admin_Controller {
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$id=$_POST['id'];
 			$this->vars['data']=$this->m_gallery->get_single_image($id);
-			$this->vars['modal_title']='Edit Image Info';
+			$this->vars['modal_title']='Edit Info Gambar';
 			return $this->load->view('input/modal_upload_gallery',$this->vars);
 		}else{
 			redirect('input/gallery');
@@ -103,7 +103,7 @@ class Gallery extends Admin_Controller {
 					'deskripsi' => $_POST['deskripsi'],
 					'status' => $_POST['status']
 				));			
-				$hasil=$this->m_curd->update(array('id' => $id),'gallery',$filldata);
+				$hasil=$this->m_crud->update(array('id' => $id),'gallery',$filldata);
 				if($hasil){
 					$this->vars['type']='alert-success';
 					$this->vars['message']='Berhasil Menyimpan';
@@ -115,7 +115,7 @@ class Gallery extends Admin_Controller {
 				$this->vars['type'] = 'alert-danger';
 				$this->vars['message'] = validation_errors();					
 			}
-			$this->vars['title']="Images Gallery";
+			$this->vars['title']="Galeri Gambar";
 			$this->vars['display']=$this->vars['gallery']=TRUE;
 			$this->vars['data']=$this->m_gallery->get_images();
 			$this->vars['content']='input/gallery';
@@ -150,7 +150,7 @@ class Gallery extends Admin_Controller {
 					}
 				}
 				if($del_image){
-					$hasil = $this->m_curd->hapus(array('id' => $id_image),'gallery');
+					$hasil = $this->m_crud->hapus(array('id' => $id_image),'gallery');
 					if($hasil){
 						$this->vars['type']='alert-success';
 						$this->vars['message']='Berhasil Menghapus';
@@ -163,7 +163,7 @@ class Gallery extends Admin_Controller {
 				$this->vars['type']='alert-danger';
 				$this->vars['message']='Gagal Menghapus';					
 			}
-			$this->vars['title']="Images Gallery";
+			$this->vars['title']="Galeri Gambar";
 			$this->vars['display']=$this->vars['gallery']=TRUE;
 			$this->vars['data']=$this->m_gallery->get_images();
 			$this->vars['content']='input/gallery';

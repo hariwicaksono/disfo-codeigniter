@@ -8,8 +8,8 @@
 		<div class="col-xs-5">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="javascript:void(0);" class="btn btn-flat btn-xs btn-primary" OnClick="load_import(<?=$id_bulan; ?>)"><i class="fa fa-file-excel-o"></i> Import</a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
+				<a href="javascript:void(0);" class="btn btn-sm btn-primary" OnClick="load_import(<?=$id_bulan; ?>)"><i class="fa fa-file-excel-o"></i> Import Excel</a>
 			</div>				
 		</div>
 	</div>
@@ -18,9 +18,7 @@
 <section class="content">
 	<div class="row">
 		<div class="col-sm-12" >
-		<div class="callout callout-info">
-                <p>Bagian ini khusus untuk layout 2</p>
-            </div>	
+	
 			<div class="box box-default" >
 				<div class="box-body" id="settings-content">
 					<?php if(isset($type)){ ?>
@@ -67,7 +65,7 @@
 						}else{
 						?>
 							<tr>
-								<td colspan="3">No Jadwal Sholat data, please add new Jadwal Sholat item.</td>
+								<td colspan="3">Tidak ada data Jadwal Sholat, silahkan tambahkan item Jadwal Sholat baru.</td>
 							</tr>						
 						<?php
 						}
@@ -84,8 +82,8 @@
 				<div class="box-body">
 					<h4>Cara Memperbaharui Jadwal Sholat</h4>
 					<ol>
-						<li>Klik Menu Import</li>
-						<li>Download blanko</li>
+						<li>Klik Tombol Import Excel</li>
+						<li>Download Blanko</li>
 						<li>Kemudian akses ke website Kementrian Agama di <a href="https://bimasislam.kemenag.go.id/jadwalshalat">BIMAS ISLAM</a></li>
 						<li>Pilih provinsi - kabupaten/kota - bulan - tahun </li>
 						<li>Klik Menu Proses Data (Icon Search)</li>

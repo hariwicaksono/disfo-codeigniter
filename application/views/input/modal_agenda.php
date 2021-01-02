@@ -35,7 +35,7 @@
 					<input type="text" class="form-control" name="tmp_agenda" value="<?php echo (isset($tmp_agenda) ? $tmp_agenda : ""); ?>" required />
 				</div>	
 				<div class="form-group">
-					<label>Start Date</label>
+					<label>Tanggal Mulai</label>
 					<div class="input-group date">
 						<input type="text" class="form-control datepicker" name="tgl_agenda" value="<?php echo (isset($tgl_agenda) ? $tgl_agenda : ""); ?>" required>
 						<div class="input-group-addon">
@@ -54,8 +54,8 @@
 				</div>					
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+				<button type="submit" class="btn btn-primary">Simpan</button>
 			</div>
 			<?php echo form_close(); ?>
 		</div>

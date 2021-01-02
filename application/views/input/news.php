@@ -8,8 +8,8 @@
 		<div class="col-xs-5">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="javascript:void(0);" class="btn btn-flat btn-xs btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i></a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
+				<a href="javascript:void(0);" class="btn btn-sm btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i> Tambah</a>
 			</div>				
 		</div>
 	</div>
@@ -26,12 +26,12 @@
 					</div>
 					<?php } ?>								
 					<table class="table" id="tb-news">
-						<thead class="bg-black">
+						<thead>
 							<tr>
 								<th>No</th>
 								<th>Tanggal</th>
 								<th>News</th>
-								<th>Action</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -46,11 +46,11 @@
 								<td><?=$news->tgl_news; ?></td>
 								<td><?=$news->txt_news; ?></td>
 								<td>
-									<a href="javascript:void(0);" class="btn btn-primary btn-xs" OnClick="load_edit('<?=$news->id; ?>')">
-										<i class="fa fa-edit"><span> Edit</span></i>
+									<a href="javascript:void(0);" class="btn btn-primary btn-sm" OnClick="load_edit('<?=$news->id; ?>')">
+										<i class="fa fa-edit"><span></i> Edit</span>
 									</a>
-									<a href="<?=site_url('input/news/hapus/'.$news->id); ?>" class="btn btn-danger btn-xs">
-										<i class="fa fa-trash"><span> Delete</span></i>
+									<a href="<?=site_url('input/news/hapus/'.$news->id); ?>" class="btn btn-danger btn-sm">
+										<i class="fa fa-trash"><span></i> Hapus</span>
 									</a>									
 								</td>
 							</tr>

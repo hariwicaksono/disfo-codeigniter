@@ -5,12 +5,12 @@ class News extends Admin_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_news','m_curd']);
+		$this->load->model(['m_news','m_crud']);
 		
 	}
 	public function index()
 	{
-		$this->vars['title']="Display News Ticker";
+		$this->vars['title']="Display Berita Teks Berjalan";
 		$this->vars['display']=$this->vars['news']=TRUE;
 		$this->vars['data']=$this->m_news->get_news();
 		$this->vars['content']='input/news';
@@ -19,7 +19,7 @@ class News extends Admin_Controller {
 	
 	public function add(){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			$this->vars['modal_title']='News Ticker';
+			$this->vars['modal_title']='Berita Teks Berjalan';
 			return $this->load->view('input/modal_news',$this->vars);
 		}else{
 			redirect('input/news');
@@ -29,7 +29,7 @@ class News extends Admin_Controller {
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$id=$_POST['id'];
 			$this->vars['data']=$this->m_news->get_single_news($id);
-			$this->vars['modal_title']='News Ticker';
+			$this->vars['modal_title']='Berita Teks Berjalan';
 			return $this->load->view('input/modal_news',$this->vars);
 		}else{
 			redirect('input/news');
@@ -44,14 +44,14 @@ class News extends Admin_Controller {
 					$filldata=$this->security->xss_clean(array(
 						'txt_news' => $_POST['txt_news']
 					));					
-					$hasil=$this->m_curd->update(array('id' => $id),'news',$filldata);
+					$hasil=$this->m_crud->update(array('id' => $id),'news',$filldata);
 				}else{
 					//new 
 					$filldata=$this->security->xss_clean(array(
 						'txt_news' => $_POST['txt_news'],
 						'tgl_news' => date("Y-m-d")
 					));
-					$hasil=$this->m_curd->add_new('news',$filldata);
+					$hasil=$this->m_crud->add_new('news',$filldata);
 				}
 				if($hasil){
 					$this->vars['type']='alert-success';
@@ -64,7 +64,7 @@ class News extends Admin_Controller {
 				$this->vars['type'] = 'error';
 				$this->vars['message'] = validation_errors();					
 			}
-			$this->vars['title']="Display News Ticker";
+			$this->vars['title']="Display Berita Teks Berjalan";
 			$this->vars['display']=$this->vars['news']=TRUE;
 			$this->vars['data']=$this->m_news->get_news();
 			$this->vars['content']='input/news';
@@ -83,7 +83,7 @@ class News extends Admin_Controller {
 	public function hapus($id){
 		$id_news=(int) $id;
 		if($id_news && $id_news !=0 && ctype_digit((string) $id_news)){
-			$hasil = $this->m_curd->hapus(array('id' => $id_news),'news');
+			$hasil = $this->m_crud->hapus(array('id' => $id_news),'news');
 			if($hasil){
 				$this->vars['type']='alert-success';
 				$this->vars['message']='Berhasil Menghapus';

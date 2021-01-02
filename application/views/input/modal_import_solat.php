@@ -24,7 +24,7 @@
 					<p class="text-center">
 						Sebelum memulai upload ada baiknya anda menggunakan blanko Excel
 						dari system.<br /> 
-						<a href="<?=base_url('assets/blanko/jadwal_solat.xlsx'); ?>" class="btn btn-primary btn-md">
+						<a href="<?=base_url('assets/blanko/jadwal_solat.xlsx'); ?>" class="btn btn-success btn-md">
 							<i class="fa fa-download"> Download Blanko</i>
 						</a>
 					</p>
@@ -32,7 +32,7 @@
 			</div>			
 	  </div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
 			<button type="submit" class="btn btn-primary">Import</button>
 		</div>	 
 		<?php echo form_close(); ?>

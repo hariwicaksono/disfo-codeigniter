@@ -8,7 +8,7 @@
 		<div class="col-xs-4">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('input/jumatan'); ?>" class="btn btn-flat btn-xs btn-primary">Back</a>
+				<a href="<?=site_url('input/jumatan'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
 			</div>				
 		</div>
 	</div>
@@ -56,7 +56,7 @@
 						<label>Judul Khotbah</label>
 						<input type="text" class="form-control" name="judul_khotbah" id="judul_khotbah" value="<?=isset($data) ? $data->judul_khotbah : '';?>" required />
 					</div>	
-					<button type="submit" class="btn btn-primary btn-sm btn-flat">Simpan</button>						
+					<button type="submit" class="btn btn-primary">Simpan</button>						
 				<?php echo form_close(); ?>
 				</div>
 			</div>				

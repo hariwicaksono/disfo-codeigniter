@@ -8,7 +8,7 @@
 		<div class="col-xs-4">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('input/kegiatan_masjid'); ?>" class="btn btn-flat btn-xs btn-primary">Back</a>
+				<a href="<?=site_url('input/kegiatan_masjid'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
 			</div>				
 		</div>
 	</div>
@@ -60,7 +60,7 @@
 						<label>Waktu</label>
 						<input type="text" class="form-control" name="waktu" placeholder="ex. 08.00 WIB s.d Selesai" value="<?=isset($data) ? $data->waktu : '';?>" required />
 					</div>
-					<button type="submit" class="btn btn-primary btn-sm btn-flat">Simpan</button>						
+					<button type="submit" class="btn btn-primary">Simpan</button>						
 				<?php echo form_close(); ?>
 				</div>
 			</div>				

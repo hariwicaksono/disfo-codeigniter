@@ -7,7 +7,7 @@ class Jadwal_solat extends Admin_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_solat','m_curd']);
+		$this->load->model(['m_solat','m_crud']);
 		$this->load->library('upload');
 	}
 	
@@ -55,7 +55,7 @@ class Jadwal_solat extends Admin_Controller {
 			}else{
 				$jadwal_solat=$this->m_solat->get_solat($id_bulan);
 				if($jadwal_solat->num_rows()>0){
-					$this->m_curd->hapus(array('id_bulan' => $id_bulan),'jadwal_solat');
+					$this->m_crud->hapus(array('id_bulan' => $id_bulan),'jadwal_solat');
 				}
 				$data = array('upload_data' => $this->upload->data());
 				$filename = $this->upload->data('file_name');
@@ -112,7 +112,7 @@ class Jadwal_solat extends Admin_Controller {
 						$isya = filter_var(trim($allDataInSheet[$i][$isya]), FILTER_SANITIZE_STRING);
 						
 
-						$query=$this->m_curd->add_new('jadwal_solat',array('id_bulan' => $id_bulan, 'tanggal' => $tanggal, 'imsak' => $imsak, 'subuh' => $subuh, 'terbit' => $terbit, 'duha' => $duha, 'dzuhur' => $dzuhur, 'ashar' => $ashar, 'magrib' => $magrib, 'isya' => $isya));
+						$query=$this->m_crud->add_new('jadwal_solat',array('id_bulan' => $id_bulan, 'tanggal' => $tanggal, 'imsak' => $imsak, 'subuh' => $subuh, 'terbit' => $terbit, 'duha' => $duha, 'dzuhur' => $dzuhur, 'ashar' => $ashar, 'magrib' => $magrib, 'isya' => $isya));
 						if($query){
 							$ket ="Tersimpan";
 						}else{

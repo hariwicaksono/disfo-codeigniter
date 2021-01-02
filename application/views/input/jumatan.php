@@ -8,8 +8,8 @@
 		<div class="col-xs-4">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="<?=site_url('input/jumatan/form/add'); ?>" class="btn btn-flat btn-xs btn-primary">Tambah</a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
+				<a href="<?=site_url('input/jumatan/form/add'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
 			</div>				
 		</div>
 	</div>
@@ -43,7 +43,7 @@
 								<th class="text-center">Muazin</th>
 								<th class="text-center">Judul Khotbah</th>
 								<th class="text-center">Status</th>
-								<th class="text-center">Action</th>
+								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -62,17 +62,17 @@
 								<td><?=$row->judul_khotbah; ?></td>
 								<td class="text-center">
 								<?php if($row->status==0){ ?>
-									<a href="<?=site_url('input/jumatan/aktifkan/'.$row->id) ?>" class="btn btn-success btn-flat btn-xs">Aktifkan</a>
+									<a href="<?=site_url('input/jumatan/aktifkan/'.$row->id) ?>" class="btn btn-link btn-xs">Aktifkan?</a>
 								<?php }else{ ?>
-									Jadwal Aktif
+									<div class="label label-success">Jadwal Aktif</div>
 								<?php } ?>
 								</td>
 								<td class="center">
 									<div class="box-tools btn-group btn-grid">
-										<a href="<?=site_url('input/jumatan/form/edit/'.$row->id) ?>" class="btn btn-primary btn-flat btn-xs">
+										<a href="<?=site_url('input/jumatan/form/edit/'.$row->id) ?>" class="btn btn-primary btn-sm">
 											<i class="fa fa-edit"></i>
 										</a>
-										<a href="<?=site_url('input/jumatan/hapus/'.$row->id) ?>" class="btn btn-primary btn-flat btn-xs">
+										<a href="<?=site_url('input/jumatan/hapus/'.$row->id) ?>" class="btn btn-danger btn-sm">
 											<i class="fa fa-trash"></i>
 										</a>										
 									</div>

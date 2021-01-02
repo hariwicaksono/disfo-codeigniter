@@ -77,8 +77,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+				<button type="submit" class="btn btn-primary">Simpan</button>
 			</div>
 			<?php echo form_close(); ?>
 		</div>

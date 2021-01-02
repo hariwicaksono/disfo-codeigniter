@@ -5,12 +5,12 @@ class Agenda extends Admin_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_agenda','m_curd']);
+		$this->load->model(['m_agenda','m_crud']);
 		
 	}
 	public function index()
 	{
-		$this->vars['title']="Display Agenda Instansi";
+		$this->vars['title']="Display Agenda";
 		$this->vars['display']=$this->vars['agenda']=TRUE;
 		$this->vars['data']=$this->m_agenda->get_agenda();
 		$this->vars['content']='input/agenda';
@@ -19,7 +19,7 @@ class Agenda extends Admin_Controller {
 	
 	public function load_new(){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			$this->vars['modal_title']='Agenda Instansi';
+			$this->vars['modal_title']='Agenda';
 			return $this->load->view('input/modal_agenda',$this->vars);
 		}else{
 			redirect('input/agenda');
@@ -30,7 +30,7 @@ class Agenda extends Admin_Controller {
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$id=$_POST['id'];
 			$this->vars['data_agenda']=$this->m_agenda->get_single_agenda($id);
-			$this->vars['modal_title']='Agenda Instansi';
+			$this->vars['modal_title']='Agenda';
 			return $this->load->view('input/modal_agenda',$this->vars);
 		}else{
 			redirect('input/agenda');
@@ -48,7 +48,7 @@ class Agenda extends Admin_Controller {
 						'tgl_agenda' => $_POST['tgl_agenda'],
 						'waktu' => $_POST['waktu']
 					));					
-					$hasil=$this->m_curd->update(array('id' => $id),'agenda_instansi',$filldata);
+					$hasil=$this->m_crud->update(array('id' => $id),'agenda_instansi',$filldata);
 				}else{
 					//new 
 					$filldata=$this->security->xss_clean(array(
@@ -57,7 +57,7 @@ class Agenda extends Admin_Controller {
 						'tgl_agenda' => $_POST['tgl_agenda'],
 						'waktu' => $_POST['waktu']
 					));		
-					$hasil=$this->m_curd->add_new('agenda_instansi',$filldata);
+					$hasil=$this->m_crud->add_new('agenda_instansi',$filldata);
 				}
 				if($hasil){
 					$this->vars['type']='alert-success';
@@ -70,7 +70,7 @@ class Agenda extends Admin_Controller {
 				$this->vars['type'] = 'alert-danger';
 				$this->vars['message'] = validation_errors();					
 			}
-			$this->vars['title']="Display Agenda Instansi";
+			$this->vars['title']="Display Agenda";
 			$this->vars['display']=$this->vars['agenda']=TRUE;
 			$this->vars['data']=$this->m_agenda->get_agenda();
 			$this->vars['content']='input/agenda';
@@ -92,7 +92,7 @@ class Agenda extends Admin_Controller {
 	public function hapus($id){
 		$id_agenda=(int) $id;
 		if($id_agenda && $id_agenda !=0 && ctype_digit((string) $id_agenda)){
-			$hasil = $this->m_curd->hapus(array('id' => $id_agenda),'agenda_instansi');
+			$hasil = $this->m_crud->hapus(array('id' => $id_agenda),'agenda_instansi');
 			if($hasil){
 				$this->vars['type']='alert-success';
 				$this->vars['message']='Berhasil Menghapus';

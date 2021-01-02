@@ -5,7 +5,7 @@ class Profile extends Admin_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_users','m_curd']);
+		$this->load->model(['m_users','m_crud']);
 		$this->load->library('upload');
 	}
 	public function index()
@@ -43,7 +43,7 @@ class Profile extends Admin_Controller {
 					'fullname' => $_POST['fullname'],
 					'email' => $_POST['email']
 				));
-				$hasil=$this->m_curd->update(array('id' => $this->session->id),'users',$filldata);
+				$hasil=$this->m_crud->update(array('id' => $this->session->id),'users',$filldata);
 				if($hasil){
 					$this->session->set_userdata('username', $_POST['username']);
 					$this->session->set_userdata('fullname', $_POST['fullname']);
@@ -93,7 +93,7 @@ class Profile extends Admin_Controller {
 				$filldata=array(
 					'password' => password_hash($this->security->xss_clean($_POST['pass_baru']),PASSWORD_DEFAULT)
 				);
-				$hasil=$this->m_curd->update(array('id' => $this->session->id),'users',$filldata);
+				$hasil=$this->m_crud->update(array('id' => $this->session->id),'users',$filldata);
 				if($hasil){
 					$this->vars['type'] = 'alert-success';
 					$this->vars['message'] = "Berhasil ganti password!";						
@@ -150,7 +150,7 @@ class Profile extends Admin_Controller {
 				$filldata=$this->security->xss_clean(array(
 					'foto' => $filename
 				));
-				$hasil=$this->m_curd->update(array('id' => $this->session->id),'users',$filldata);
+				$hasil=$this->m_crud->update(array('id' => $this->session->id),'users',$filldata);
 				if($hasil){
 					$this->session->set_userdata('foto', $filename);
 					$this->vars['type'] = 'alert-success';

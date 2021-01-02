@@ -8,8 +8,8 @@
 		<div class="col-xs-4">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="<?=site_url('input/keuangan_masjid/form/add'); ?>" class="btn btn-flat btn-xs btn-primary">Tambah</a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
+				<a href="<?=site_url('input/keuangan_masjid/form/add'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
 			</div>				
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 								<th class="text-center">Uraian</th>
 								<th class="text-center">Pemasukan</th>
 								<th class="text-center">Pengeluaran</th>
-								<th class="text-center">Action</th>
+								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -75,10 +75,10 @@
 								</td>								
 								<td class="center">
 									<div class="box-tools btn-group btn-grid">
-										<a href="<?=site_url('input/keuangan_masjid/form/edit/'.$row->id) ?>" class="btn btn-primary btn-flat btn-xs">
+										<a href="<?=site_url('input/keuangan_masjid/form/edit/'.$row->id) ?>" class="btn btn-primary btn-sm">
 											<i class="fa fa-edit"></i>
 										</a>
-										<a href="<?=site_url('input/keuangan_masjid/hapus/'.$row->id) ?>" class="btn btn-primary btn-flat btn-xs">
+										<a href="<?=site_url('input/keuangan_masjid/hapus/'.$row->id) ?>" class="btn btn-danger btn-sm">
 											<i class="fa fa-trash"></i>
 										</a>										
 									</div>

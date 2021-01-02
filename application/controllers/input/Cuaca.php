@@ -5,7 +5,7 @@ class Cuaca extends Admin_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_cuaca','m_curd']);
+		$this->load->model(['m_cuaca','m_crud']);
 		
 	}
 	public function index()
@@ -24,7 +24,7 @@ class Cuaca extends Admin_Controller {
 				$filldata=$this->security->xss_clean(array(
 					'area' => $_POST['area']
 				));					
-				$hasil=$this->m_curd->update(array('id' => $id),'cuaca',$filldata);
+				$hasil=$this->m_crud->update(array('id' => $id),'cuaca',$filldata);
 				
 				if($hasil){
 					$this->vars['type']='alert-success';

@@ -12,23 +12,27 @@
 <div class="row justify-content-center py-3">
 <div class="col-sm-4">
 	<div class="card card-body">
-	<h5 class="card-title mb-3">Sign in to start your session</h5>
+	<h4 class="card-title mb-3">Sign in to start your session</h4>
 		<?php if(isset($type)){ ?>
 		<div class="alert <?=$type; ?>">
 			<?=$message; ?>
 		</div>
 		<?php } ?>
 		<form action="<?=site_url('login/process'); ?>" method="post">
-			<div class="form-group has-feedback">
+			<div class="form-group input-group">
 				<input type="text" class="form-control" placeholder="username" name="username" id="username">
-				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+				<div class="input-group-append">
+				<div class="input-group-text"><i class="fa fa-user"></i></div>
+				</div>
 			</div>
-			<div class="form-group has-feedback">
+			<div class="form-group input-group">
 				<input type="password" class="form-control" placeholder="Password" name="password" id="password">
-				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+				<div class="input-group-append">
+				<div class="input-group-text"><i class="fa fa-lock"></i></div>
+				</div>
 			</div>
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
+				<button type="submit" class="btn btn-primary btn-block">Masuk</button>
 			</div>
 		</form>
 

@@ -8,10 +8,10 @@
 		<div class="col-xs-5">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="javascript:void(0);" class="btn btn-flat btn-xs btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i></a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
+				<a href="javascript:void(0);" class="btn btn-sm btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i> Tambah</a>
 			</div>				
-		</div>
+		</div> 
 	</div>
 </section>
 <!-- Main content -->
@@ -32,7 +32,7 @@
 								<th>Judul</th>
 								<th>Video</th>
 								<th>Status</th>
-								<th>Action</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -52,19 +52,19 @@
 									<div class="embed-responsive embed-responsive-4by3">
 										<video controls>
 										  <source src="<?=base_url('uploads/video/'.$video->nm_file); ?>" type="video/mp4">
-										  Your browser does not support HTML5 video.
+										  Browser Anda tidak mendukung video HTML5.
 										</video>
 									</div>
 								</td>
 								<td>
-									<?=$video->status; ?>
+								<?php echo ($video->status==1 ? "Aktif" : "Tidak Aktif"); ?>
 								</td>
 								<td>
-									<a href="javascript:void(0);" class="btn btn-primary btn-xs" OnClick="load_edit('<?=$video->id; ?>')">
-										<i class="fa fa-edit"><span> Edit</span></i>
+									<a href="javascript:void(0);" class="btn btn-primary btn-sm" OnClick="load_edit('<?=$video->id; ?>')">
+										<i class="fa fa-edit"><span></i> Edit</span>
 									</a>
-									<a href="<?=site_url('input/video/hapus/'.$video->id); ?>" class="btn btn-danger btn-xs">
-										<i class="fa fa-trash"><span> Delete</span></i>
+									<a href="<?=site_url('input/video/hapus/'.$video->id); ?>" class="btn btn-danger btn-sm">
+										<i class="fa fa-trash"><span></i> Hapus</span>
 									</a>									
 								</td>
 							</tr>
@@ -73,7 +73,7 @@
 						}else{
 						?>
 							<tr>
-								<td colspan="3">No video data, please add new video item.</td>
+								<td colspan="3">Tidak ada data video, tambahkan item video baru.</td>
 							</tr>						
 						<?php
 						}

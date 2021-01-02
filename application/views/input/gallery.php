@@ -8,9 +8,9 @@
 		<div class="col-xs-5">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="javascript:void(0);" class="btn btn-flat btn-xs btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i></a>
-			</div>				
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
+				<a href="javascript:void(0);" class="btn btn-sm btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i> Tambah</a>
+			</div>	 			
 		</div>
 	</div>
 </section>
@@ -33,7 +33,7 @@
 								<th>Label</th>
 								<th>Description</th>
 								<th>Status</th>
-								<th>Action</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -56,11 +56,11 @@
 									<?php echo ($images->status==1 ? "Aktif" : "Tidak Aktif"); ?>
 								</td>
 								<td>
-									<a href="javascript:void(0);" class="btn btn-primary btn-xs" OnClick="load_edit(<?=$images->id; ?>)">
+									<a href="javascript:void(0);" class="btn btn-primary btn-sm" OnClick="load_edit(<?=$images->id; ?>)">
 										<i class="fa fa-pencil"></i> Edit
 									</a>
-									<a href="<?=site_url('input/gallery/hapus/'.$images->id); ?>" class="btn btn-danger btn-xs">
-										<i class="fa fa-trash"></i> Delete
+									<a href="<?=site_url('input/gallery/hapus/'.$images->id); ?>" class="btn btn-danger btn-sm">
+										<i class="fa fa-trash"></i> Hapus
 									</a>									
 								</td>
 							</tr>
@@ -69,7 +69,7 @@
 						}else{
 						?>
 							<tr>
-								<td colspan="6">No images, please upload new image.</td>
+								<td colspan="6">Belum ada Galeri Gambar</td>
 							</tr>						
 						<?php
 						}

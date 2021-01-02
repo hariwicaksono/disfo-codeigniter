@@ -8,8 +8,8 @@
 		<div class="col-xs-5">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
-				<a href="javascript:void(0);" class="btn btn-flat btn-xs btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i></a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
+				<a href="javascript:void(0);" class="btn btn-sm btn-primary" OnClick="load_new()"><i class="fa fa-plus"></i> Tambah</a>
 			</div>				
 		</div>
 	</div>
@@ -32,7 +32,7 @@
 								<th>No</th>
 								<th>Nama Agenda</th>
 								<th>Tempat/Tanggal/Waktu</th>
-								<th>Action</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -51,10 +51,10 @@
 									<?=$agenda->waktu; ?>
 								</td>
 								<td>
-									<a href="javascript:void(0);" class="btn btn-primary btn-xs" OnClick="load_edit(<?=$agenda->id; ?>)">
+									<a href="javascript:void(0);" class="btn btn-primary btn-sm" OnClick="load_edit(<?=$agenda->id; ?>)">
 										<i class="fa fa-edit"></i> Edit
 									</a>
-									<a href="<?=site_url('input/agenda/hapus/'. $agenda->id); ?>" class="btn btn-danger btn-xs">
+									<a href="<?=site_url('input/agenda/hapus/'. $agenda->id); ?>" class="btn btn-danger btn-sm">
 										<i class="fa fa-edit"></i> Hapus
 									</a>									
 								</td>

@@ -20,11 +20,11 @@
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 	   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/_all-skins.min.css');?>">
-	<!-- Google Font -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+	<!-- Google Font 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">-->
 	<!-- jQuery 3 -->
 	<script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/bower_components/jquery/dist/bootstrap.bundle.min.js'); ?>"></script>
+	
 	<script type="text/javascript">
 		const _BASE_URL = '<?=base_url();?>', _CURRENT_URL = '<?=current_url();?>';			
 	</script>
@@ -76,7 +76,7 @@
 		
 	</div>
 		<!--wrapper-->
-
+<script src="<?php echo base_url('assets/dist/js/bootstrap.bundle.min.js'); ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->

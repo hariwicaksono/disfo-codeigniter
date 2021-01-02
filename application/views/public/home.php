@@ -31,8 +31,8 @@
 			Tampilkan informasi dengan Display Informasi. Pemakaian sangat mudah hanya dengan IST (Input, Setting, dan Tampilkan).
 		</i></h3>
 		<div class="form-group">
-			<a href="<?=site_url('login'); ?>" class="btn btn-danger">Login</a>
-			<a href="<?=site_url('display'); ?>" class="btn btn-warning">Display</a>
+			<a href="<?=site_url('login'); ?>" class="btn btn-warning btn-lg"><i class="fa fa-sign-in"></i> Login</a>
+			<a href="<?=site_url('display'); ?>" class="btn btn-success btn-lg"><i class="fa fa-tv"></i> Display</a>
 		</div>
 	</div>
 	</div>

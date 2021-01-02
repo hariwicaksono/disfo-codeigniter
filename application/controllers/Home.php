@@ -9,7 +9,7 @@ class Home extends Public_Controller {
 	}
 	public function index()
 	{
-		$this->vars['title']="Display Informasi Kampus";
+		$this->vars['title']="Display Informasi";
 		$this->vars['home']=TRUE;
 		$this->vars['content']='public/home';
 		$this->load->view('public/index',$this->vars);

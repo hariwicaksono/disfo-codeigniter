@@ -8,7 +8,7 @@
 		<div class="col-xs-4">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
 			</div>				
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 								
 							</div>
 							<div class="col-sm-4">
-								<button type="submit" class="btn btn-primary btn-md">Save</button>
+								<button type="submit" class="btn btn-primary btn-md">Simpan</button>
 							</div>
 						</div>
 					</div>
@@ -59,8 +59,8 @@
 				<!-- /.box-header -->
 				<div class="box-body">
 					<ol>
-						<li>Pilih Kota anda</li>
-						<li>Klik tombol save</li>
+						<li>Masukkan Nama Kota anda</li>
+						<li>Klik tombol Simpan</li>
 					</ol>
 				</div>
 				<!-- /.box-body -->

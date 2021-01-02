@@ -38,7 +38,7 @@
 	?>
 		<tr>
 			<td>
-				No data Available ...
+			Tidak ada data yang tersedia
 			</td>
 		</tr>
 	<?php } ?>

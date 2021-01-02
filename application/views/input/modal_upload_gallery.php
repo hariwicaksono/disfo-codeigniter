@@ -14,7 +14,7 @@ if(isset($data)){
 <div class="modal fade" id="modal-upload" data-backdrop="static">
   <div class="modal-dialog">
 	<div class="modal-content">
-	<?php
+	<?php 
 		if(!isset($data)){
 			echo form_open_multipart('input/gallery/upload',array('id' => 'frm-upload','class' => 'form-horizontal')); 
 		}else{
@@ -27,24 +27,24 @@ if(isset($data)){
 	  <div class="modal-body">
 			<input type="hidden" name="id" value="<?=(isset($id_images) ? $id_images : "") ;?>" />
 			<div class="form-group">
-				<label class="col-sm-3">Image Label</label>
+				<label class="col-sm-3">Label Gambar</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" name="label" value="<?=(isset($label) ? $label : "") ;?>" required>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-3">Description Image</label>
+				<label class="col-sm-3">Deskripsi Gambar</label>
 				<div class="col-sm-6">
 					<input type="text" class="form-control" name="deskripsi" value="<?=(isset($deskripsi) ? $deskripsi : "") ;?>" required>
 				</div>
 			</div>
 			<?php if(!isset($data)){ ?>
 			<div class="form-group">
-				<label class="col-sm-3" for="exampleInputFile">Image</label>
+				<label class="col-sm-3" for="exampleInputFile">Pilih File</label>
 				<div class="col-sm-6">
 					<input type="file" id="exampleInputFile" name="file" required>
 
-					<p class="margin">Format File .jpg | .png </p>
+					<p class="margin text-info"><i class="fa fa-info"></i> Format File .jpg | .png </p>
 				</div>
 			</div>
 			<?php } ?>
@@ -59,7 +59,7 @@ if(isset($data)){
 			</div>		
 	  </div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
 			<button type="submit" class="btn btn-primary" id="submit">Upload</button>
 		</div>	 
 		<?php echo form_close(); ?>

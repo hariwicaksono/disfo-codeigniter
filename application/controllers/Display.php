@@ -10,7 +10,7 @@ class Display extends Public_Controller {
 	}
 	public function index() 
 	{ 
-		$this->vars['title']="Display Informasi Kampus";
+		$this->vars['title']="Display Informasi";
 		$this->vars['display']=TRUE;
 		$this->vars['news']=$this->m_news->str_news();
 		$this->vars['jadwal_solat']=$this->m_solat->get_single_solat(array('id_bulan' => date("m"), 'tanggal' => date("Y-m-d")));
