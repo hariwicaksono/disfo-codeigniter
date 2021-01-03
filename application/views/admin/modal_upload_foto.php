@@ -11,12 +11,12 @@
 				<div class="col-sm-6">
 					<input type="file" id="exampleInputFile" name="file" required>
 
-					<p class="margin">Format File .mp4 | .3gp | .mpeg</p>
+					<p class="margin">Format File Jpg | Png</p>
 				</div>
 			</div>		
 	  </div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
 			<button type="submit" class="btn btn-primary" id="submit">Upload</button>
 		</div>	 
 		<?php echo form_close(); ?>

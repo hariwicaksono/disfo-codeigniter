@@ -26,7 +26,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="<?=site_url($this->session->url_profile); ?>" class="btn btn-default btn-flat">Profile</a>
+                  <a href="<?=site_url($this->session->url_profile); ?>" class="btn btn-default btn-flat">Profil</a>
                 </div>
                 <div class="pull-right">
                   <a href="<?=site_url('logout'); ?>" class="btn btn-default btn-flat">Sign out</a>

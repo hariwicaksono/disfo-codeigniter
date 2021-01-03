@@ -21,7 +21,8 @@
 			<div class="box box-default" >
 				<div class="box-body" id="settings-content">
 					<?php if(isset($type)){ ?>
-					<div class="alert <?=$type; ?>">
+					<div class="alert <?=$type; ?> alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 						<?=$message; ?>
 					</div>
 					<?php } ?>								

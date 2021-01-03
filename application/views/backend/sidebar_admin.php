@@ -44,10 +44,10 @@
   </a>
   <ul class="treeview-menu">
 	<li class="<?=isset($general) ? 'active' : ''; ?>">
-		<a href="<?=site_url('settings/general'); ?>"><i class="fa fa-circle-o"></i> General Settings</a>
+		<a href="<?=site_url('settings/general'); ?>"><i class="fa fa-circle-o"></i> Pengaturan Umum</a>
 	</li>	
 	<li class="<?=isset($app) ? 'active' : ''; ?>">
-		<a href="<?=site_url('settings/app'); ?>"><i class="fa fa-circle-o"></i> App Settings</a>
+		<a href="<?=site_url('settings/app'); ?>"><i class="fa fa-circle-o"></i> Pengaturan App</a>
 	</li>		
   </ul>
 </li>

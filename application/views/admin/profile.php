@@ -8,7 +8,7 @@
 		<div class="col-xs-5">
 			<!--for button tools-->
 			<div class="box-tools btn-group btn-grid pull-right">
-				<a href="<?=site_url('dashboard'); ?>" class="btn btn-flat btn-xs btn-primary"><i class="fa fa-home"></i></a>
+				<a href="<?=site_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="fa fa-home"></i></a>
 			</div>				
 		</div>
 	</div>
@@ -18,7 +18,8 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<?php if(isset($type)){ ?>
-			<div class="alert <?=$type; ?>">
+			<div class="alert <?=$type; ?> alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 				<?=$message; ?>
 			</div>
 			<?php } ?>			
@@ -56,7 +57,7 @@
 					</ul>
 
 					<a href="javascript:void(0);" OnClick="upload();" class="btn btn-primary btn-block">
-						<i class="fa fa-edit" ></i> <b>Ganti Foto</b>
+						<i class="fa fa-edit" ></i> Ganti Foto
 					</a>
 				</div>
 			<!-- /.box-body -->
@@ -92,7 +93,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-3 col-sm-offset-3">
-								<button type="submit" class="btn btn-success btn-md">
+								<button type="submit" class="btn btn-success">
 									<i class="fa fa-save"></i> Simpan
 								</button>
 							</div>
@@ -121,7 +122,7 @@
 						</div>	
 						<div class="form-group">
 							<div class="col-sm-3 col-sm-offset-3">
-								<button type="submit" class="btn btn-success btn-md">
+								<button type="submit" class="btn btn-success">
 									<i class="fa fa-save"></i> Ganti Password
 								</button>
 							</div>

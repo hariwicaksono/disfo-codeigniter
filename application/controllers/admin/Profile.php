@@ -10,7 +10,7 @@ class Profile extends Admin_Controller {
 	}
 	public function index()
 	{
-		$this->vars['title']="Profile";
+		$this->vars['title']="Profil Saya";
 		$this->vars['dashboar']=TRUE;
 		$this->vars['data']=$this->m_users->get_profile();
 		$this->vars['content']='admin/profile';
@@ -58,7 +58,7 @@ class Profile extends Admin_Controller {
 				$this->vars['type'] = 'error';
 				$this->vars['message'] = validation_errors();					
 			}
-			$this->vars['title']="Profile";
+			$this->vars['title']="Profil Saya";
 			$this->vars['dashboar']=TRUE;
 			$this->vars['data']=$this->m_users->get_profile();
 			$this->vars['content']='admin/profile';
@@ -105,7 +105,7 @@ class Profile extends Admin_Controller {
 				$this->vars['type'] = 'alert-danger';
 				$this->vars['message'] = validation_errors();					
 			}
-			$this->vars['title']="Profile";
+			$this->vars['title']="Profil Saya";
 			$this->vars['dashboar']=TRUE;
 			$this->vars['data']=$this->m_users->get_profile();
 			$this->vars['content']='admin/profile';
@@ -117,7 +117,7 @@ class Profile extends Admin_Controller {
 	
 	public function add_foto(){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-			$this->vars['modal_title']='Add Photo';
+			$this->vars['modal_title']='Ganti Foto';
 			return $this->load->view('admin/modal_upload_foto',$this->vars);
 		}else{
 			redirect('admin/profile');
@@ -161,7 +161,7 @@ class Profile extends Admin_Controller {
 				}
 			}
 
-			$this->vars['title']="Profile";
+			$this->vars['title']="Profil Saya";
 			$this->vars['dashboar']=TRUE;
 			$this->vars['data']=$this->m_users->get_profile();
 			$this->vars['content']='admin/profile';

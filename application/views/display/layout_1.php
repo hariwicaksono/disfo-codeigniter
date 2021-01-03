@@ -2,7 +2,7 @@
 <div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
 	<div class="row transparan" style="margin-bottom: 1rem;">
 		<div class="col-sm-2" id="box-logo">
-			<img style="margin:0 auto;margin-top: 20px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />
+			<img style="margin:0 auto;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />;
 		</div>
 		<div class="col-sm-6" id="judul_parent">
 			<span id="judul_1"><strong><?=$this->settings->info['nama_instansi']; ?></strong></span><br />
@@ -126,8 +126,13 @@
 		</div>
 	</div>
 
-	<div class="row" id="info-sholat">
-		<div class="col-md-12 col-lg-12">
+	<div id="info-sholat">
+	<div class="row">
+		<div class="col-sm-3 col-md-3 col-lg-3 pull-right transparan-abu text-center">
+			<span id="count-solat" class="jelang"></span>
+		</div>			
+		</div>
+		<div>
 			<div class="row">
 				<?php 
 				if($jadwal_solat->num_rows()>0){

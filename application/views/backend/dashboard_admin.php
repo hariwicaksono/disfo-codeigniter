@@ -11,8 +11,8 @@
 			<p class="lead">
 				Lakukan pengaturan aplikasi melalui menu Pengaturan, dalam menu pengaturan terdapat 
 				menu General Settings dan App Settings.<br />
-				<a href="<?=site_url('settings/general'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> General Settings</a>
-				<a href="<?=site_url('settings/app'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> App Settings</a>
+				<a href="<?=site_url('settings/general'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Pengaturan Umum</a>
+				<a href="<?=site_url('settings/app'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Pengaturan App</a>
 			</p>
 		  </section>	  	
 		  <section id="input-display">
@@ -23,7 +23,7 @@
 			</p>
 			<p>
 				<ul>
-					<li>News</li>
+					<li>Berita</li>
 					<li>Agenda</li>
 					<li>Jadwal Sholat</li>
 					<li>Video</li>
@@ -33,7 +33,7 @@
 				Untuk penggunaan pertama kali, lakukanlah sesuai dengan urutan diatas, anda dapat mengakses semua itu
 				di menu Display.
 				<br />
-				<a href="<?=site_url('input/news'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> News</a>
+				<a href="<?=site_url('input/news'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Berita</a>
 				<a href="<?=site_url('input/agenda'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Agenda</a>
 				<a href="javascript:void(0);" OnClick="load_bulan();" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Jadwal</a>
 				<a href="<?=site_url('input/video'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Video</a>
@@ -67,10 +67,10 @@
 			</p>
 		  </section>		
 		  <section id="profile">
-			<h2 class="page-header">4. Pengaturan Profile Anda</h2>
+			<h2 class="page-header">4. Pengaturan Profil Anda</h2>
 			<p class="lead">
-				Lakukan pengaturan profile dan password akun anda di menu profile. <br />
-				<a href="<?=site_url($this->session->url_profile); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Profile</a>
+				Lakukan pengaturan profil dan password akun anda di menu profil. <br />
+				<a href="<?=site_url($this->session->url_profile); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Profil</a>
 			</p>
 		  </section>	
 		  <section id="display-show">

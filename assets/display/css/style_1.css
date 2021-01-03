@@ -233,3 +233,11 @@ body {
 .card .body{
 	padding : 12px!important;
 }
+#info-sholat {
+	position:absolute;
+	bottom:8vh;
+    width:100%;
+	min-width:1366px;
+    z-index:3;
+    overflow: hidden;
+}
