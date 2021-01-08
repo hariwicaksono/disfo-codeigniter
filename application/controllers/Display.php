@@ -18,9 +18,11 @@ class Display extends Public_Controller {
 		
 		switch($this->settings->info['layout']){ 
 			case 'layout_2':
-				$this->vars['data_jumat'] = $this->m_masjid->get_jumatan('status',1);
-				$this->vars['data_kegiatan']=$this->m_kegiatan->kegiatan_masjid_bulan(date("n"));
-				$this->vars['data_transaksi'] = $this->cek_transaksi('data');
+				$this->vars['agenda_instansi']=$this->m_agenda->agenda_bulan(date("n"));
+				$this->vars['data_gallery']=$this->m_gallery->get_aktif_images();
+				$query = $this->m_cuaca->get_settings()->row();
+				$city = $query->area;
+				$this->vars['current_weather'] = $this->m_cuaca->current_weather($city);
 				$content='display/layout_2';
 				break;	
 			case 'layout_3':
@@ -29,7 +31,13 @@ class Display extends Public_Controller {
 				$city = $query->area;
 				$this->vars['current_weather'] = $this->m_cuaca->current_weather($city);
 				$content='display/layout_3';
-				break;			
+				break;
+			case 'layout_4':
+					$this->vars['data_jumat'] = $this->m_masjid->get_jumatan('status',1);
+					$this->vars['data_kegiatan']=$this->m_kegiatan->kegiatan_masjid_bulan(date("n"));
+					$this->vars['data_transaksi'] = $this->cek_transaksi('data');
+					$content='display/layout_4';
+			break;			
 			default :
 				$this->vars['agenda_instansi']=$this->m_agenda->agenda_bulan(date("n"));
 				$this->vars['data_gallery']=$this->m_gallery->get_aktif_images();

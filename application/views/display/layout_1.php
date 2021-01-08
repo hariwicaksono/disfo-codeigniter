@@ -2,7 +2,7 @@
 <div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
 	<div class="row transparan" style="margin-bottom: 1rem;">
 		<div class="col-sm-2" id="box-logo">
-			<img style="margin:0 auto;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />;
+			<img style="margin:0 auto;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />
 		</div>
 		<div class="col-sm-6" id="judul_parent">
 			<span id="judul_1"><strong><?=$this->settings->info['nama_instansi']; ?></strong></span><br />
@@ -126,78 +126,6 @@
 		</div>
 	</div>
 
-	<div id="info-sholat">
-	<div class="row">
-		<div class="col-sm-3 col-md-3 col-lg-3 pull-right transparan-abu text-center">
-			<span id="count-solat" class="jelang"></span>
-		</div>			
-		</div>
-		<div>
-			<div class="row">
-				<?php 
-				if($jadwal_solat->num_rows()>0){
-					$solat=$jadwal_solat->row();
-					$subuh =$solat->subuh;
-					$duha=$solat->duha;
-					$dzuhur=$solat->dzuhur;
-					$ashar=$solat->ashar;
-					$magrib=$solat->magrib;
-					$isya=$solat->isya;
-				}
-				?>
-				<div class="col-md-12 col-lg-12 transparan" style="padding-top:20px;">
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-blue-grey text-center">
-								<span class="nm-solat">Subuh</span><br />
-								<span class="waktu-solat" id="subuh"><?php echo (isset($subuh) ? $subuh : "-"); ?></span>
-							</div>
-						</div>
-					</div>			
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-red text-center">
-								<span class="nm-solat">Duha</span><br />
-								<span class="waktu-solat" id="duha"><?php echo (isset($duha) ? $duha : "-"); ?></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-cyan text-center">
-								<span class="nm-solat">Dzuhur</span><br />
-								<span class="waktu-solat" id="dzuhur"><?php echo (isset($dzuhur) ? $dzuhur : "-"); ?></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-green text-center">
-								<span class="nm-solat">Ashar</span><br />
-								<span class="waktu-solat" id="ashar"><?php echo (isset($ashar) ? $ashar : "-"); ?></span>
-							</div>
-						</div>
-					</div>	
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-orange text-center">
-								<span class="nm-solat">Magrib</span><br />
-								<span class="waktu-solat" id="magrib"><?php echo (isset($magrib) ? $magrib : "-"); ?></span>
-							</div>
-						</div>
-					</div>	
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-pink text-center">
-								<span class="nm-solat">Isya</span><br />
-								<span class="waktu-solat" id="isya"><?php echo (isset($isya) ? $isya : "-"); ?></span>
-							</div>
-						</div>
-					</div>							
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 <!--first slide-->
 <div id="tanggal-jam" class="text-center">
@@ -236,10 +164,6 @@ var jam_ke=0;
 var intervalID = setInterval( function(){
 	cek_agenda();
 }, <?=$this->settings->info['agenda_refresh']; ?> * 1000);
-
-var intervalSolat = setInterval( function(){
-	cek_waktu_solat();
-}, 1000);
 
 var intervalNewsTicker = setInterval(function(){
 	cek_news();
@@ -289,23 +213,6 @@ function cek_photos(){
 	$.post(_BASE_URL + 'display/cek_photos',function(f){
 		$('#slide-photos').html(f);
 	},'html');	
-}
-function cek_waktu_solat(){
-	$.post(_BASE_URL + 'display/cek_waktu_solat',function(f){
-		if(f.waktu!=""){
-			var now = new Date().getTime();
-			var countDownDate = new Date(f.waktu).getTime();
-			var distance = countDownDate - now;
-			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-			var hours = checkTime(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-			var minutes = checkTime(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
-			var seconds = checkTime(Math.floor((distance % (1000 * 60)) / 1000));	
-			
-			$('#count-solat').html(f.jelang + ' ' + hours + ":" + minutes + ":" + seconds);
-		}else{
-			$('#count-solat').html(f.jelang);
-		}
-	},'json');		
 }
 
 </script>

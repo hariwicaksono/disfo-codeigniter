@@ -17,7 +17,7 @@
 	?>
 		<tr>
 			<td><?=$no; ?></td>
-			<td><a href="javascript:void(0);" OnClick="edit(<?=$settings->id; ?>)"><i class="fa fa-edit"></i></a></td>
+			<td><a href="javascript:void(0);" OnClick="edit(<?=$settings->id; ?>)"><i class="fa fa-edit fa-lg"></i></a></td>
 			<td><?=$settings->deskripsi_setting; ?></td>
 			<td>
 			<?php 

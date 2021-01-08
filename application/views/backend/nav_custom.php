@@ -14,15 +14,6 @@
                   <?=$this->session->fullname; ?>
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-12 text-center">
-						<?=$this->session->jenis_str; ?>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">

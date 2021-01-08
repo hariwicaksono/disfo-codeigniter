@@ -39,9 +39,9 @@
 							<label class="control-label">Value</label>
 							<select class="form-control" name="value_setting">
 								<option value="layout_1" <?php echo ($setitem->value_setting=="layout_1" ? "selected" : "");?>>Layout 1</option>
-								<option value="layout_2" <?php echo ($setitem->value_setting=="layout_2" ? "selected" : "");?>>Layout 2 (Masjid)</option>
+								<option value="layout_2" <?php echo ($setitem->value_setting=="layout_2" ? "selected" : "");?>>Layout 2</option>
 								<option value="layout_3" <?php echo ($setitem->value_setting=="layout_3" ? "selected" : "");?>>Layout 3</option>
-								
+								<option value="layout_4" <?php echo ($setitem->value_setting=="layout_4" ? "selected" : "");?>>Layout 4 (Masjid)</option>
 							</select>
 						</div>
 				<?php }elseif($setitem->variable_setting=="background"){ ?>
