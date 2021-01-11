@@ -14,7 +14,7 @@ class General extends Admin_Controller {
 	 * index
 	 */
 	public function index() {
-		$this->vars['title'] = 'General Settings';
+		$this->vars['title'] = 'Pengaturan Umum';
 		$this->vars['settings'] = $this->vars['general']=true;
 		$this->vars['data'] =$this->m_settings->get_settings("group_setting","general");
 		$this->vars['content'] = 'settings/read';
@@ -24,7 +24,7 @@ class General extends Admin_Controller {
 	public function edit(){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$id=$_POST['id'];
-			$this->vars['modal_title']="Edit General Settings";
+			$this->vars['modal_title']="Edit Pengaturan Umum";
 			$this->vars['data']=$this->m_settings->get_settings("id",$id);
 			return $this->load->view('settings/modal_edit',$this->vars);
 		}

@@ -14,7 +14,7 @@ class App extends Admin_Controller {
 	 * index
 	 */
 	public function index() {
-		$this->vars['title'] = 'Application Settings';
+		$this->vars['title'] = 'Pengaturan aplikasi';
 		$this->vars['settings'] = $this->vars['app']=true;
 		$this->vars['data'] =$this->m_settings->get_settings("group_setting","app");
 		$this->vars['content'] = 'settings/read';
@@ -24,7 +24,7 @@ class App extends Admin_Controller {
 	public function edit(){
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$id=$_POST['id'];
-			$this->vars['modal_title']="Edit General Settings";
+			$this->vars['modal_title']="Edit Pengaturan aplikasi";
 			$this->vars['data']=$this->m_settings->get_settings("id",$id);
 			return $this->load->view('settings/modal_edit',$this->vars);
 		}

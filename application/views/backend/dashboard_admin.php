@@ -2,21 +2,17 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="content body">
-		  <p class="lead">
-			Bacalah panduan ini dengan baik, dan jika anda masih belum memahaminya,
-			silahkan hubungi kami di Contact Center.
-		  </p>
 		  <section id="setting">
-			<h2 class="page-header">1. Setting Aplikasi</h2>
+			<h2>1. Setting Aplikasi</h2>
 			<p class="lead">
 				Lakukan pengaturan aplikasi melalui menu Pengaturan, dalam menu pengaturan terdapat 
-				menu General Settings dan App Settings.<br />
+				menu General Settings dan App Settings.	</p>
 				<a href="<?=site_url('settings/general'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Pengaturan Umum</a>
 				<a href="<?=site_url('settings/app'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Pengaturan App</a>
-			</p>
+		
 		  </section>	  	
 		  <section id="input-display">
-			<h2 class="page-header">2. Input Data Display</h2>
+			<h2>2. Input Data Display</h2>
 			<p class="lead">
 				Hal yang terpenting adalah menginputkan data Display yaitu data-data yang akan ditampilkan pada
 				layar Display Informasi seperti :
@@ -32,15 +28,15 @@
 			<p  class="lead">
 				Untuk penggunaan pertama kali, lakukanlah sesuai dengan urutan diatas, anda dapat mengakses semua itu
 				di menu Display.
-				<br />
+				</p>
 				<a href="<?=site_url('input/news'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Berita</a>
 				<a href="<?=site_url('input/agenda'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Agenda</a>
 				<a href="javascript:void(0);" OnClick="load_bulan();" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Jadwal</a>
 				<a href="<?=site_url('input/video'); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Video</a>
-			</p>
+			
 		  </section>	
 		  <section id="php-ini">
-			<h2 class="page-header">3. Pengaturan file php.ini</h2>
+			<h2>3. Pengaturan file php.ini</h2>
 			<p class="lead">
 				Pengaturan file php.ini berguna dalam hal upload video ke server anda.
 			</p>
@@ -67,17 +63,17 @@
 			</p>
 		  </section>		
 		  <section id="profile">
-			<h2 class="page-header">4. Pengaturan Profil Anda</h2>
+			<h2>4. Pengaturan Profil Anda</h2>
 			<p class="lead">
-				Lakukan pengaturan profil dan password akun anda di menu profil. <br />
+				Lakukan pengaturan profil dan password akun anda di menu profil.	</p>
 				<a href="<?=site_url($this->session->url_profile); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Profil</a>
-			</p>
+		
 		  </section>	
 		  <section id="display-show">
-			<h2 class="page-header">5. Jalankan Display</h2>
+			<h2>5. Jalankan Display</h2>
 			<p class="lead">
 				Setelah semua siap hubungkan perangkat anda ke TV LED. Logout dan klik Menu Display untuk menjalankan tampilan Display Informasi anda. Tekan tombol 
-				keyboard F11 untuk fullscreen view. (minimum resolution TV 1366 x 768)<br />
+				keyboard F11 untuk fullscreen view. (minimum resolution TV 1366 x 768)
 			</p>
 		  </section>
 		</div>

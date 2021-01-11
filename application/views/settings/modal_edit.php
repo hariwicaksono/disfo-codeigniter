@@ -46,24 +46,24 @@
 						</div>
 				<?php }elseif($setitem->variable_setting=="background"){ ?>
 						<div class="form-group">
-							<label for="exampleInputFile">Background Image</label>
+							<label for="exampleInputFile">Background Gambar</label>
 							<input type="file" id="exampleInputFile" name="file" required>
-							<p class="margin">Format File .jpg</p>
-							<span class="help-block">Refresh your Display after upload image success </span>
+							<p class="margin">Format File .jpg, png</p>
+							<span class="help-block">Segarkan Tampilan Anda setelah berhasil mengunggah gambar</span>
 						</div>	
 				<?php }elseif($setitem->variable_setting=="logo"){ ?>
 						<div class="form-group">
 							<label for="exampleInputFile">Logo</label>
 							<input type="file" id="exampleInputFile" name="file" required>
-							<p class="margin">Format File .jpg</p>
-							<span class="help-block">Refresh your Display after upload image success </span>
+							<p class="margin">Format File .jpg, png</p>
+							<span class="help-block">Segarkan Tampilan Anda setelah berhasil mengunggah gambar</span>
 						</div>						
 				<?php }else{ ?>
 						<div class="form-group">
 							<label class="control-label">Value</label>
 							<input type="text" class="form-control" name="value_setting" value="<?=$setitem->value_setting; ?>" />
 							<?php if($setitem->variable_setting=="news_refresh" || $setitem->variable_setting=="slide_refresh"){ ?>
-							<span class="help-block">Input with numeric in seconds (Detik)</span>
+							<span class="help-block">Input dengan numerik dalam hitungan detik</span>
 							<?php } ?>
 						</div>			
 				<?php
