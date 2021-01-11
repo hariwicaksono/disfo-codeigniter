@@ -12,7 +12,7 @@
 <div class="row justify-content-center py-3">
 <div class="col-sm-4">
 	<div class="card card-body">
-	<h4 class="card-title mb-3">Masuk untuk memulai sesi Anda</h4>
+	<h5 class="card-title mb-3">Masuk untuk memulai sesi Anda</h5>
 		<?php if(isset($type)){ ?>
 		<div class="alert <?=$type; ?>">
 			<?=$message; ?>
