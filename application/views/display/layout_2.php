@@ -1,6 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-	<div class="row transparan" style="margin-bottom: 1rem;">
+<div class="wrapper">
 		<div class="col-sm-2" id="box-logo">
 			<img style="margin:0 auto;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />
 		</div>
@@ -28,7 +27,7 @@
 	                </div>
 		</div>
 	</div>	
-	<div class="row justify-content-center">
+	<div class="row-fluid justify-content-center">
 		<div class="col-sm-8">
 			<div class="embed-responsive embed-responsive-4by3">
 			<!--
@@ -127,77 +126,206 @@
 	</div>
 
 	<div id="info-sholat">
-	<div class="row">
-		<div class="col-sm-3 col-md-3 col-lg-3 pull-right transparan-abu text-center">
-			<span id="count-solat" class="jelang"></span>
-		</div>			
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3 pull-right transparan-abu text-center">
+				<span id="count-solat" class="jelang"></span>
+			</div>			
 		</div>
-		<div>
-			<div class="row">
-				<?php 
-				if($jadwal_solat->num_rows()>0){
-					$solat=$jadwal_solat->row();
-					$subuh =$solat->subuh;
-					$duha=$solat->duha;
-					$dzuhur=$solat->dzuhur;
-					$ashar=$solat->ashar;
-					$magrib=$solat->magrib;
-					$isya=$solat->isya;
-				}
-				?>
-				<div class="col-md-12 col-lg-12 transparan" style="padding-top:20px;">
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-blue-grey text-center">
-								<span class="nm-solat">Subuh</span><br />
-								<span class="waktu-solat" id="subuh"><?php echo (isset($subuh) ? $subuh : "-"); ?></span>
-							</div>
-						</div>
-					</div>			
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-red text-center">
-								<span class="nm-solat">Duha</span><br />
-								<span class="waktu-solat" id="duha"><?php echo (isset($duha) ? $duha : "-"); ?></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-cyan text-center">
-								<span class="nm-solat">Dzuhur</span><br />
-								<span class="waktu-solat" id="dzuhur"><?php echo (isset($dzuhur) ? $dzuhur : "-"); ?></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-green text-center">
-								<span class="nm-solat">Ashar</span><br />
-								<span class="waktu-solat" id="ashar"><?php echo (isset($ashar) ? $ashar : "-"); ?></span>
-							</div>
-						</div>
-					</div>	
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-orange text-center">
-								<span class="nm-solat">Magrib</span><br />
-								<span class="waktu-solat" id="magrib"><?php echo (isset($magrib) ? $magrib : "-"); ?></span>
-							</div>
-						</div>
-					</div>	
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-						<div class="card">
-							<div class="body bg-pink text-center">
-								<span class="nm-solat">Isya</span><br />
-								<span class="waktu-solat" id="isya"><?php echo (isset($isya) ? $isya : "-"); ?></span>
-							</div>
-						</div>
-					</div>							
+	<?php if($this->settings->info['jadwal_sholat']=="api") {?>
+
+<?php if($sock = @fsockopen('www.google.com', 80)) { ?>
+	<?php
+	foreach($jadwal_solat["results"]["datetime"] as $value){
+		$imsak = $value['times']['Imsak'];
+		$subuh = $value['times']['Fajr'];
+		$dzuhur=$value['times']['Dhuhr'];
+		$ashar=$value['times']['Asr'];
+		$magrib=$value['times']['Maghrib'];
+		$isya=$value['times']['Isha'];
+	}
+
+	?>
+	<div class="row no-gutters">
+	
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-red text-center">
+					<h2 class="nama-solat">Imsak</h2>
+					<span class="waktu-solat" id="imsak"><?php echo (isset($imsak) ? $imsak : "-"); ?></span>
 				</div>
 			</div>
 		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-blue-grey text-center">
+					<h2 class="nama-solat" style=>Subuh</h2>
+					<span class="waktu-solat" id="subuh"><?php echo (isset($subuh) ? $subuh : "-"); ?></span>
+				</div>
+			</div>
+		</div>			
+		
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-cyan text-center">
+					<h2 class="nama-solat">Dzuhur</h2>
+					<span class="waktu-solat" id="dzuhur"><?php echo (isset($dzuhur) ? $dzuhur : "-"); ?></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-green text-center">
+					<h2 class="nama-solat">Ashar</h2>
+					<span class="waktu-solat" id="ashar"><?php echo (isset($ashar) ? $ashar : "-"); ?></span>
+				</div>
+			</div>
+		</div>	
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-orange text-center">
+					<h2 class="nama-solat">Magrib</h2>
+					<span class="waktu-solat" id="magrib"><?php echo (isset($magrib) ? $magrib : "-"); ?></span>
+				</div>
+			</div>
+		</div>	
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-pink text-center">
+					<h2 class="nama-solat">Isya</h2>
+					<span class="waktu-solat" id="isya"><?php echo (isset($isya) ? $isya : "-"); ?></span>
+				</div>
+			</div>
+		</div>
+								
 	</div>
+
+	<?php } else { ?>
+		<div class="card">
+				<div class="card-body bg-red text-center" style="padding: 7px 0">
+		<i class="fa fa-exclamation-triangle"></i> Perhatian! Anda tidak terhubung ke Internet atau Ganti pengaturan jadwal sholat menjadi mode Manual Excel.
+		</div>
+		</div>
+	<div class="row no-gutters">
+						
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-red text-center">
+					<h2 class="nama-solat">Imsak</h2>
+					<span class="waktu-solat" id="imsak">-</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-blue-grey text-center">
+					<h2 class="nama-solat" style=>Subuh</h2>
+					<span class="waktu-solat" id="subuh">-</span>
+				</div>
+			</div>
+		</div>			
+		
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-cyan text-center">
+					<h2 class="nama-solat">Dzuhur</h2>
+					<span class="waktu-solat" id="dzuhur">-</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-green text-center">
+					<h2 class="nama-solat">Ashar</h2>
+					<span class="waktu-solat" id="ashar">-</span>
+				</div>
+			</div>
+		</div>	
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-orange text-center">
+					<h2 class="nama-solat">Magrib</h2>
+					<span class="waktu-solat" id="magrib">-</span>
+				</div>
+			</div>
+		</div>	
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-pink text-center">
+					<h2 class="nama-solat">Isya</h2>
+					<span class="waktu-solat" id="isya">-</span>
+				</div>
+			</div>
+		</div>
+								
+	</div>
+	
+	<?php } ?>	
+	<?php } else { ?>
+		<?php 
+	if($jadwal_solat->num_rows()>0){
+		$solat=$jadwal_solat->row();
+		$subuh =$solat->subuh;
+		$duha=$solat->duha;
+		$dzuhur=$solat->dzuhur;
+		$ashar=$solat->ashar;
+		$magrib=$solat->magrib;
+		$isya=$solat->isya;
+	}
+	?>
+	<div class="row no-gutters">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-blue-grey text-center">
+					<h2 class="nama-solat" style=>Subuh</h2>
+					<span class="waktu-solat" id="subuh"><?php echo (isset($subuh) ? $subuh : "-"); ?></span>
+				</div>
+			</div>
+		</div>			
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-red text-center">
+					<h2 class="nama-solat">Duha</h2>
+					<span class="waktu-solat" id="duha"><?php echo (isset($duha) ? $duha : "-"); ?></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-cyan text-center">
+					<h2 class="nama-solat">Dzuhur</h2>
+					<span class="waktu-solat" id="dzuhur"><?php echo (isset($dzuhur) ? $dzuhur : "-"); ?></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-green text-center">
+					<h2 class="nama-solat">Ashar</h2>
+					<span class="waktu-solat" id="ashar"><?php echo (isset($ashar) ? $ashar : "-"); ?></span>
+				</div>
+			</div>
+		</div>	
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-orange text-center">
+					<h2 class="nama-solat">Magrib</h2>
+					<span class="waktu-solat" id="magrib"><?php echo (isset($magrib) ? $magrib : "-"); ?></span>
+				</div>
+			</div>
+		</div>	
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+			<div class="card">
+				<div class="card-body bg-pink text-center">
+					<h2 class="nama-solat">Isya</h2>
+					<span class="waktu-solat" id="isya"><?php echo (isset($isya) ? $isya : "-"); ?></span>
+				</div>
+			</div>
+		</div>							
+	</div>
+
+
+	<?php }?>	
+
 </div>
 <!--first slide-->
 <div id="tanggal-jam" class="text-center">
@@ -306,6 +434,15 @@ function cek_waktu_solat(){
 			$('#count-solat').html(f.jelang);
 		}
 	},'json');		
+}
+function cek_sholat(){
+	$.post(_BASE_URL + 'display/cek_sholat',function(f){
+		$('#subuh').html(f.subuh);
+		$('#dzuhur').html(f.dzuhur);
+		$('#ashar').html(f.ashar);
+		$('#magrib').html(f.magrib);
+		$('#isya').html(f.isya);
+	},'json');	
 }
 
 </script>

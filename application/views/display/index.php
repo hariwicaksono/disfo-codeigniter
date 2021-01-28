@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="refresh" content="3600">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>DISFO | <?=$title; ?></title>
 	<!-- Tell the browser to be responsive to screen width -->
@@ -59,7 +60,7 @@
 		const _BASE_URL = '<?=base_url();?>', _CURRENT_URL = '<?=current_url();?>';			
 	</script>	
 </head>
-<body>
+<body style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
 	<?php $this->load->view($content); ?>	
 </body>
 </html>

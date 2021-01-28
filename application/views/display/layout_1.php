@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+<div class="wrapper">
 	<div class="row transparan" style="margin-bottom: 1rem;">
 		<div class="col-sm-2" id="box-logo">
 			<img style="margin:0 auto;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />
@@ -28,7 +28,7 @@
 	                </div>
 		</div>
 	</div>	
-	<div class="row justify-content-center">
+	<div class="row-fluid justify-content-center">
 		<div class="col-sm-8">
 			<div class="embed-responsive embed-responsive-4by3">
 			<!--

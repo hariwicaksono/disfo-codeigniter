@@ -25,7 +25,7 @@ body {
 	top:0vh;
     width:100%;
 	min-width:1366px;
-	height:20vh;
+	height:16vh;
     z-index:4;
     overflow: hidden;
 }
@@ -40,10 +40,10 @@ body {
 }
 #info-sholat {
 	position:absolute;
-	top:53vh;
+	bottom:8vh;
     width:100%;
 	min-width:1366px;
-	height:35vh;
+	height:25vh;
     z-index:3;
     overflow: hidden;
 }
@@ -73,7 +73,7 @@ body {
     width:100%;
 	min-width:1366px;
 	height:12vh;
-    background: #c0392b;
+    background-color : rgba(0,0,0,0.9)!important;
     z-index:2;
     overflow: hidden;
 	white-space: nowrap;
@@ -90,15 +90,13 @@ body {
     margin: 0;
     text-align: center;
     white-space: nowrap;
-
-
 }
 
 /* Global Classes */
 .header-text {
 	font-family: 'Helvetica', sans-serif;
 	font-size: 3.8vw;
-	color: #FFFFFF;
+	color: yellow;
 	width:100vw;
 }
 
@@ -154,7 +152,15 @@ body {
 .bg-pink{
 	background-color : rgba(233,30,99,0.5) !important;
 }
-
+#tanggal {
+	font-size: 1.8vw;
+	border-bottom: 1px solid #aab7b8
+}
+#jam {
+	font-size: 4.5vw;
+	font-weight: bold;
+	color: yellow;
+}
 .number{
   font-weight: normal;
   font-size: 5vw;

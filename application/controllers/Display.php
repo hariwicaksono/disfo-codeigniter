@@ -5,7 +5,7 @@ class Display extends Public_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model(['m_agenda','m_news','m_solat','m_video','m_gallery','m_kegiatan','m_masjid','m_keuangan','m_cuaca']);
+		$this->load->model(['m_agenda','m_news','m_solat','m_video','m_gallery','m_kegiatan','m_masjid','m_keuangan','m_cuaca','api_sholat']);
 		
 	}
 	public function index() 
@@ -13,7 +13,15 @@ class Display extends Public_Controller {
 		$this->vars['title']="Display Informasi";
 		$this->vars['display']=TRUE;
 		$this->vars['news']=$this->m_news->str_news();
+		switch($this->settings->info['jadwal_sholat']){ 
+			case 'excel':
 		$this->vars['jadwal_solat']=$this->m_solat->get_single_solat(array('id_bulan' => date("m"), 'tanggal' => date("Y-m-d")));
+			break;			
+			default :
+		$city = $this->settings->info['kota'];
+		$tanggal = date('Y-m-d');
+		$this->vars['jadwal_solat'] = $this->api_sholat->get_prayzone($city,$tanggal);
+		}
 		$this->vars['data_video']=$this->m_video->get_aktif_video2();
 		
 		switch($this->settings->info['layout']){ 

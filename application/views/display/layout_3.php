@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<div class="wrapper" style="background:url('<?=base_url('images/'.$this->settings->info['background']);?>') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
-	<div class="row transparan" style="margin-bottom: 1rem;">
+<div class="wrapper">
+	<div class="row transparan" style="padding: 20px 0;margin-bottom: 1rem;">
 		<div class="col-sm-1" id="box-logo">
 			<img style="margin:auto;margin-left:20px;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" height="100" />
 		</div>
@@ -9,7 +9,7 @@
 			<span id="judul_2"><?=$this->settings->info['alamat']; ?></span>
 		</div>	
 	</div> 
-
+ 
 <div class="container-fluid">	
 
 	<div class="row-fluid">

@@ -57,7 +57,16 @@
 							<input type="file" id="exampleInputFile" name="file" required>
 							<p class="margin">Format File .jpg, png</p>
 							<span class="help-block">Segarkan Tampilan Anda setelah berhasil mengunggah gambar</span>
-						</div>						
+						</div>	
+				<?php }elseif($setitem->variable_setting=="jadwal_sholat"){ ?>
+						<div class="form-group">
+							<label class="control-label">Value</label>
+							<select class="form-control" name="value_setting">
+								<option value="api" <?php echo ($setitem->value_setting=="api" ? "selected" : "");?>>REST API https://api.pray.zone</option>
+								<option value="excel" <?php echo ($setitem->value_setting=="excel" ? "selected" : "");?>>Manual Excel</option>
+								
+							</select>
+						</div>					
 				<?php }else{ ?>
 						<div class="form-group">
 							<label class="control-label">Value</label>

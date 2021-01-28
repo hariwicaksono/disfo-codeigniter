@@ -3,7 +3,7 @@
 	<div class="col-sm-12">
 		<div class="content body">
 		  <section id="setting">
-			<h2>1. Setting Aplikasi</h2>
+			<h3>1. Setting Aplikasi</h3>
 			<p class="lead">
 				Lakukan pengaturan aplikasi melalui menu Pengaturan, dalam menu pengaturan terdapat 
 				menu General Settings dan App Settings.	</p>
@@ -12,7 +12,7 @@
 		
 		  </section>	  	
 		  <section id="input-display">
-			<h2>2. Input Data Display</h2>
+			<h3>2. Input Data Display</h3>
 			<p class="lead">
 				Hal yang terpenting adalah menginputkan data Display yaitu data-data yang akan ditampilkan pada
 				layar Display Informasi seperti :
@@ -36,7 +36,7 @@
 			
 		  </section>	
 		  <section id="php-ini">
-			<h2>3. Pengaturan file php.ini</h2>
+			<h3>3. Pengaturan file php.ini</h3>
 			<p class="lead">
 				Pengaturan file php.ini berguna dalam hal upload video ke server anda.
 			</p>
@@ -63,14 +63,14 @@
 			</p>
 		  </section>		
 		  <section id="profile">
-			<h2>4. Pengaturan Profil Anda</h2>
+			<h3>4. Pengaturan Profil Anda</h3>
 			<p class="lead">
 				Lakukan pengaturan profil dan password akun anda di menu profil.	</p>
 				<a href="<?=site_url($this->session->url_profile); ?>" class="btn btn-primary btn-md">Go <i class="fa fa-arrow-right"></i> Profil</a>
 		
 		  </section>	
 		  <section id="display-show">
-			<h2>5. Jalankan Display</h2>
+			<h3>5. Jalankan Display</h3>
 			<p class="lead">
 				Setelah semua siap hubungkan perangkat anda ke TV LED. Logout dan klik Menu Display untuk menjalankan tampilan Display Informasi anda. Tekan tombol 
 				keyboard F11 untuk fullscreen view. (minimum resolution TV 1366 x 768)
