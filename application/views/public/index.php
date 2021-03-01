@@ -11,6 +11,7 @@
 	<meta name="keyword" content="">
 	<meta name="google" content="nositelinkssearchbox" />
 	<meta name="robots" content="index, follow">
+	<link rel="shortcut icon" href="<?php echo base_url('images/favicon.png'); ?>" type="image/x-icon"><!-- X -->
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/dist/css/bootstrap.min.css'); ?>">
 	<!-- Font Awesome -->

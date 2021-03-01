@@ -12,6 +12,7 @@
 	<meta name="keyword" content="">
 	<meta name="google" content="nositelinkssearchbox" />
 	<meta name="robots" content="index, follow">
+	<link rel="shortcut icon" href="<?php echo base_url('images/favicon.png'); ?>" type="image/x-icon"><!-- X -->
 	<!--Style Sheet-->
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">

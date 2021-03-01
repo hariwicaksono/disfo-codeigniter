@@ -1,1 +1,0 @@
-n-th root of a to the power of m end root equals left parenthesis n-th root of a right parenthesis to the power of m

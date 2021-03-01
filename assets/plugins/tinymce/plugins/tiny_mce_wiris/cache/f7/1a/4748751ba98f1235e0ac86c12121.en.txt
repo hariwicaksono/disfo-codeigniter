@@ -1,1 +1,0 @@
-fraction numerator K L over denominator P Q end fraction equals fraction numerator L M over denominator P R end fraction equals fraction numerator K M over denominator Q R end fraction

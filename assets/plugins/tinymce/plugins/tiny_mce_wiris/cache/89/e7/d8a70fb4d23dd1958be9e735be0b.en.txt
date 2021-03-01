@@ -1,1 +1,0 @@
-fraction numerator 1 over denominator 40.0000 end fraction

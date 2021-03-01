@@ -1,1 +1,0 @@
-angle A equals 40 degree comma space angle B equals 60 degree comma space angle C equals 80 degree
