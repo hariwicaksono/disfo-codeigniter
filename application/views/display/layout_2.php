@@ -1,32 +1,33 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <div class="wrapper">
+	<div class="row transparan" style="margin-bottom: 1rem;">
 		<div class="col-sm-2" id="box-logo">
 			<img style="margin:0 auto;margin-top: 10px;" id="logo" class="img-responsive" src="<?php echo base_url('images/'.($this->settings->info['logo']=="" ? 'logo.png' : $this->settings->info['logo'])); ?>" width="100" />
-		</div>
+		</div> 
 		<div class="col-sm-6" id="judul_parent">
 			<span id="judul_1"><strong><?=$this->settings->info['nama_instansi']; ?></strong></span><br />
 			<span id="judul_2"><?=$this->settings->info['alamat']; ?></span>
-		</div>	
+		</div>	 
 		<div class="col-sm-4">
-		
-	                <div class="row listdata">
-					<?php if($sock = @fsockopen('www.google.com', 80)) { ?>
-						<p><?=$current_weather['name']?>, <?=$current_weather['sys']['country']?> | <?=$current_weather['weather'][0]['main']?>, <?=$current_weather['weather'][0]['description']?></p>
-		                <div class="col-sm-6 level">
-		                	<p><strong><?=substr($current_weather['main']['temp'], 0, 2)?></strong> &deg;</p>
-		                	<p id="unit">Celcius</p>
-		                </div>
-		                <div class="col-sm-6 descript">
-		                	<p><strong>Low:</strong> <?=$current_weather['main']['temp_min']?>&deg;</p>
-		                	<p><strong>High:</strong> <?=$current_weather['main']['temp_max']?>&deg;</p>
-		                	<p><strong>Humidity:</strong> <?=$current_weather['main']['humidity']?>%</p>
-		                </div>
-					<?php } else { ?>
-						<h4>Not Connected to Internet</h4>
-					<?php } ?>
-	                </div>
+			<div class="row listdata">
+			<?php if($sock = @fsockopen('www.google.com', 80)) { ?>
+				<p><?=$current_weather['name']?>, <?=$current_weather['sys']['country']?> | <?=$current_weather['weather'][0]['main']?>, <?=$current_weather['weather'][0]['description']?></p>
+				<div class="col-sm-6 level">
+					<p><strong><?=substr($current_weather['main']['temp'], 0, 2)?></strong> &deg;</p>
+					<p id="unit">Celcius</p>
+				</div>
+				<div class="col-sm-6 descript">
+					<p><strong>Low:</strong> <?=$current_weather['main']['temp_min']?>&deg;</p>
+					<p><strong>High:</strong> <?=$current_weather['main']['temp_max']?>&deg;</p>
+					<p><strong>Humidity:</strong> <?=$current_weather['main']['humidity']?>%</p>
+				</div>
+			<?php } else { ?>
+				<h4>Not Connected to Internet</h4>
+			<?php } ?>
+			</div>
 		</div>
 	</div>	
+	
 	<div class="row-fluid justify-content-center">
 		<div class="col-sm-8">
 			<div class="embed-responsive embed-responsive-4by3">
@@ -133,7 +134,7 @@
 		</div>
 	<?php if($this->settings->info['jadwal_sholat']=="api") {?>
 
-<?php if($sock = @fsockopen('www.google.com', 80)) { ?>
+	<?php if($sock = @fsockopen('www.google.com', 80)) { ?>
 	<?php
 	foreach($jadwal_solat["results"]["datetime"] as $value){
 		$imsak = $value['times']['Imsak'];

@@ -7,8 +7,8 @@
 	<title>DISFO | <?=$title; ?></title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content=""> 
-	<meta name="keyword" content="">
+	<meta name="description" content="Aplikasi DISFO (Display Informasi) dengan CodeIgniter 3, itshop.id"> 
+	<meta name="keyword" content="aplikasi, disfo, itshop.id">
 	<meta name="google" content="nositelinkssearchbox" />
 	<meta name="robots" content="index, follow">
 	<link rel="shortcut icon" href="<?php echo base_url('images/favicon.png'); ?>" type="image/x-icon"><!-- X -->

@@ -7,7 +7,7 @@
 		<div class="col-sm-6" id="judul_parent">
 			<span id="judul_1"><strong><?=$this->settings->info['nama_instansi']; ?></strong></span><br />
 			<span id="judul_2"><?=$this->settings->info['alamat']; ?></span>
-		</div>	
+		</div>	 
 		<div class="col-sm-4">
 		
 	                <div class="row listdata">
