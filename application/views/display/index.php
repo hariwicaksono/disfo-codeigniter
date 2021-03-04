@@ -16,6 +16,7 @@
 	<!--Style Sheet-->
 	<!-- Bootstrap 3.3.7 -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>">
+	<link href="<?php echo base_url('assets/plugins/pace.js/pace-theme-default.min.css'); ?>" rel="stylesheet" />	
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/bower_components/font-awesome/css/font-awesome.min.css'); ?>">
 	<!-- Ionicons -->
@@ -49,6 +50,7 @@
 	<link rel="stylesheet" href="<?=base_url('assets/display/css/animate.css'); ?>" media="screen" type="text/css" />
 	<!-- jQuery 3 -->
 	<script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/plugins/pace.js/pace.min.js'); ?>"></script>
 	<!-- jQuery UI 1.11.4 -->
 	<script src="<?php echo base_url('assets/bower_components/jquery-ui/jquery-ui.min.js'); ?>"></script>
 	<!-- Bootstrap 3.3.7 -->
@@ -57,6 +59,8 @@
 	<script src="<?php echo base_url('assets/plugins/moment/moment.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/moment/moment-with-locales.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/moment/locale/id.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/bower_components/moment-islamic-civil/moment-civil.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/bower_components/moment-islamic-civil/locale/en.js'); ?>"></script>
 	<script type="text/javascript">
 		const _BASE_URL = '<?=base_url();?>', _CURRENT_URL = '<?=current_url();?>';			
 	</script>	

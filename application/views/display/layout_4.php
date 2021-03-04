@@ -3,6 +3,7 @@
 	<div class="row">
 		<div class="col-md-3 col-lg-3" id="calendar">
 		<p id="tanggal" class="mt-2 mb-0"></p>
+		<p id="tanggal_arab" class="mt-2 mb-0"></p>
 		</div>
 		<div class="col-md-6 col-lg-6" id="instansi">
 			<div id="nama-instansi" class="text-center"><?=$this->settings->info['nama_instansi']; ?></div>
